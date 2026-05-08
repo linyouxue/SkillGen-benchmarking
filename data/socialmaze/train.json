@@ -1,0 +1,858 @@
+{
+  "dataset_id": "socialmaze_fts_train_n60_seed42",
+  "task_name": "socialmaze_fts_train",
+  "task_type": "binary",
+  "instances": [
+    {
+      "instance_id": "shipped_normal_5",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"hotel\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: This is a place where travelers often stay overnight when they're away from home, providing basic amenities and accommodations.\nPlayer 2: A place where people often go to rest and relax when they're away from home, usually with various amenities and services available.\nPlayer 3: It's a place for temporary stays while traveling, often found near highways.\nPlayer 4: It's a place where you might stay temporarily when traveling.\n\nRound 2:\nPlayer 1: You might find this establishment offering room service, a pool, and sometimes a restaurant on the premises for guests to enjoy.\nPlayer 2: It's a type of establishment that typically has multiple floors, rooms, and a front desk where guests can check-in and check-out.\nPlayer 3: Think roadside convenience with individual entrances, unlike a grand hotel.\nPlayer 4: This establishment often features amenities like a gym, restaurant, and sometimes a pool.\n\nRound 3:\nPlayer 1: It's a common stopping point for tourists and business people alike, often located near attractions or city centers for convenience.\nPlayer 2: This location often has a lobby, dining areas, and sometimes even recreational facilities like pools or fitness centers, catering to both business travelers and vacationers.\nPlayer 3: You might find a vending machine and an outdoor pool at this type of\nPlayer 4: People here can choose from various types of accommodations, ranging from basic to luxurious.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "3",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "shipped_normal_5",
+        "spy_player": "3",
+        "normal_word": "hotel",
+        "spy_word": "motel",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_44",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"drawing\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: Making images by moving a tool across a surface to create lines and shapes.\nPlayer 2: A quick hand-made rendering that captures an idea without going into full detail.\nPlayer 3: A pastime where you use pencils or pens to make pictures on a surface.\nPlayer 4: It’s what you do with pencil or charcoal to create pictures on paper.\n\nRound 2:\nPlayer 1: Creating a visual representation of something, often by hand, using sketches or outlines.\nPlayer 2: A pencil-and-paper activity where you rough out shapes and proportions before finishing.\nPlayer 3: Something you can do on paper or a tablet to create outlines, shapes, and shading.\nPlayer 4: It can be a quick sketch or a detailed artwork made by tracing shapes and lines.\n\nRound 3:\nPlayer 1: The act of producing artwork that starts with a rough idea and becomes a detailed picture.\nPlayer 2: A concept drawing you might do in a notebook to plan a scene, character, or design.\nPlayer 3: An artistic activity often seen in classrooms, sketchbooks, and competitions.\nPlayer 4: It’s a common hobby where you try to show ideas or scenes visually without color.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "2",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_44",
+        "spy_player": "2",
+        "normal_word": "drawing",
+        "spy_word": "sketch",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_17",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"candle\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A small object you light to produce a warm glow and soft flame.\nPlayer 2: A small wax container that sits by a wall or table and produces warm, flickering light when lit.\nPlayer 3: A wax-based object that you light to produce a warm, flickering glow.\nPlayer 4: A portable household object that sits on a surface and shines when you turn it on.\n\nRound 2:\nPlayer 1: It’s often found in a holder and can melt down as it burns, leaving wax behind.\nPlayer 2: Something you might use during power outages or romantic dinners, typically with a wick that burns down over time.\nPlayer 3: Often found on tables or in ceremonies, it burns down over time and can have a steady flame.\nPlayer 4: Commonly used to light up a room, often with a shade and bulb.\n\nRound 3:\nPlayer 1: People use it for ambiance, celebrations, or lighting during power outages.\nPlayer 2: A scented or plain flame source used for ambiance, often found in glass jars or simple holders.\nPlayer 3: A household item used for light during power outages or romantic ambiance, typically with a wick at the center.\nPlayer 4: You can read or work by it after flipping a switch near it.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "4",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_17",
+        "spy_player": "4",
+        "normal_word": "candle",
+        "spy_word": "lamp",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_32",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"fog\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A grayish haze that can roll in and make the world look blurry and dim.\nPlayer 2: A soft, high mass that drifts across the sky and can block sunlight.\nPlayer 3: A soft mass in the sky that forms when moisture condenses and can bring rain or shade.\nPlayer 4: It’s something in the sky that can look fluffy or dark and can block sunlight.\n\nRound 2:\nPlayer 1: Something you might encounter when visibility drops suddenly, turning roads and lights into silhouettes.\nPlayer 2: Something in the heavens that can gather into storms and bring rain.\nPlayer 3: An airy, floating pile of water droplets or ice crystals you might see drifting across blue.\nPlayer 4: It’s often made of tiny water droplets that form when moist air rises and cools.\n\nRound 3:\nPlayer 1: A weather condition caused by moisture and air that creates a misty curtain between you and what’s far away.\nPlayer 2: A hazy or vapor-like formation you might see hovering above mountains.\nPlayer 3: A term for an online collection of data and services stored remotely rather than on your own device.\nPlayer 4: People also use its name for remote internet storage that you access online.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_32",
+        "spy_player": "1",
+        "normal_word": "cloud",
+        "spy_word": "fog",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_43",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"stage\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A place where people perform, with lighting, a curtain, and an audience facing outward.\nPlayer 2: A physical place where performers prepare and present shows to an audience.\nPlayer 3: A platform where performances happen and people take their places in front of an audience.\nPlayer 4: A raised platform where speakers or winners stand to receive attention and recognition.\n\nRound 2:\nPlayer 1: A step or checkpoint in a process, like one phase before the next begins.\nPlayer 2: A temporary platform or setup used during ceremonies, meetings, or presentations.\nPlayer 3: A step in a process or plan, often marking what comes before the next phase.\nPlayer 4: The front lectern-like stand used to present speeches or announcements in a formal setting.\n\nRound 3:\nPlayer 1: The act of preparing something to happen in a particular setting, such as organizing an event or performance.\nPlayer 2: A specific phase of a process or development when things unfold in steps.\nPlayer 3: A raised area or set used for dramatic scenes, speeches, or big presentations.\nPlayer 4: The stage position people stand on when they finish first, second, or third in a competition.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "4",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_43",
+        "spy_player": "4",
+        "normal_word": "stage",
+        "spy_word": "podium",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_50",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"knight\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A medieval warrior on horseback, recognized by protective armor and a chivalrous role.\nPlayer 2: A rowdy sea adventurer known for plundering ships and chasing treasure.\nPlayer 3: A lawless sea traveler who sails under a black flag and hunts for treasure.\nPlayer 4: A rugged sea adventurer with a colorful reputation, often hunting treasure on the open water.\n\nRound 2:\nPlayer 1: The chess piece that moves in an L-shape pattern and can jump over other pieces.\nPlayer 2: Someone who sails under a black flag and lives by lawless “booty” rules.\nPlayer 3: Someone with a wooden leg and tricorn hat who says “Arrr” and plunders ships.\nPlayer 4: Someone who sails under a chaotic flag, living by raids, plunder, and nautical mischief.\n\nRound 3:\nPlayer 1: A heroic figure from old legends, often linked with quests, bravery, and honor.\nPlayer 2: A theatrical figure often depicted with a hook hand and a swashbuckling crew.\nPlayer 3: A ruthless maritime criminal associated with ship raids, buried loot, and salty humor.\nPlayer 4: A character from stories and movies known for a wooden ship, hidden loot, and fearsome crew behavior.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_50",
+        "spy_player": "1",
+        "normal_word": "pirate",
+        "spy_word": "knight",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_29",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"rocket\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A vehicle that shoots upward into the sky using powerful thrust.\nPlayer 2: A man-made object that orbits Earth and helps with communication and navigation from above.\nPlayer 3: A vehicle that flies into space, powered upward to break away from Earth.\nPlayer 4: A vehicle that blasts upward into space, powered by burning fuel.\n\nRound 2:\nPlayer 1: Something used for space travel that relies on stages, fuel, and a countdown.\nPlayer 2: Something launched into outer space that stays in a fixed path using gravity and speed.\nPlayer 3: A fast-launching machine with stages and a fiery exhaust, often seen in space missions.\nPlayer 4: Something you might launch from a pad, often with stages that separate during flight.\n\nRound 3:\nPlayer 1: A fast-launching cylindrical device often associated with astronauts and liftoff.\nPlayer 2: An antenna-equipped device that relays signals between ground stations and other locations.\nPlayer 3: An object shaped for propulsion that carries payloads beyond the atmosphere.\nPlayer 4: A fast-travel device known for leaving a trail of fire and smoke as it accelerates.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "2",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_29",
+        "spy_player": "2",
+        "normal_word": "rocket",
+        "spy_word": "satellite",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_51",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"journalist\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A person who investigates events and reports them to the public.\nPlayer 2: Someone who captures moments with a camera lens and creates visual memories.\nPlayer 3: A person who researches events and writes factual stories for the public.\nPlayer 4: A professional who interviews people and writes articles about current events for a publication.\n\nRound 2:\nPlayer 1: Someone who gathers sources, interviews people, and writes articles for media.\nPlayer 2: A creative professional who studies lighting, composition, and focuses to produce sharp images.\nPlayer 3: Someone who interviews others, verifies details, and reports what’s happening.\nPlayer 4: Someone who researches stories, fact-checks details, and reports information to the public.\n\nRound 3:\nPlayer 1: A professional whose job is documenting news and providing verified information.\nPlayer 2: The person behind the shutter who may travel, set up scenes, and document events.\nPlayer 3: A professional whose work appears in newspapers, magazines, or online news outlets.\nPlayer 4: A media worker who may go to press conferences, cover breaking news, and produce written or recorded accounts.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "2",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_51",
+        "spy_player": "2",
+        "normal_word": "journalist",
+        "spy_word": "photographer",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_38",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"tank\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A large vehicle designed to move through obstacles and take damage in battle.\nPlayer 2: A heavy armored vehicle used for moving and fighting over rough ground.\nPlayer 3: A compact off-road vehicle you might see in rugged outdoor adventures.\nPlayer 4: A large, heavily armored vehicle used in ground combat.\n\nRound 2:\nPlayer 1: A piece of military equipment that protects its crew behind thick armor and fires heavy weapons.\nPlayer 2: A container that holds a large amount of liquid, often metal and level on the bottom.\nPlayer 3: A boxy, rugged-looking model often associated with military or adventure branding.\nPlayer 4: Something built to resist impact and handle heavy pressure without breaking.\n\nRound 3:\nPlayer 1: Something that can hold and transport a lot of liquid or resist pressure without leaking.\nPlayer 2: Something that can take a lot of punishment without breaking, like a strong performer or machine.\nPlayer 3: A small SUV-like car known for going over rough terrain and featuring high ground clearance.\nPlayer 4: A sturdy container that holds large amounts of liquid or withstands storage needs.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "3",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_38",
+        "spy_player": "3",
+        "normal_word": "tank",
+        "spy_word": "jeep",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_32",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"cappuccino\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A creamy coffee drink often topped with thick foam and popular in cafés.\nPlayer 2: A sweet coffee drink with a chocolate-and-coffee flavor that’s often served warm.\nPlayer 3: A creamy coffee drink with a foamy top and a slightly sweet, frothy texture.\nPlayer 4: A creamy coffee drink topped with frothy foam, often enjoyed in cafés.\n\nRound 2:\nPlayer 1: It’s an espresso-based beverage with a layered look, usually in a small cup, and sweetened sometimes.\nPlayer 2: A light brown, creamy color found in desserts and coffee with a hint of cocoa.\nPlayer 3: It’s a barista-style beverage served in a small cup, often with latte-like layers.\nPlayer 4: An espresso-based beverage where the final texture is thick, airy, and milk-forward.\n\nRound 3:\nPlayer 1: The name sounds like “cap” plus a type of foam layer, tied to Italian-style coffee culture.\nPlayer 2: The name of a popular café specialty that blends espresso with chocolate syrup or powder.\nPlayer 3: A classic café order where espresso is combined with steamed milk and topped with thick foam.\nPlayer 4: The kind of café order that’s usually served in small cups with a dusting of cocoa or cinnamon.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "2",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_32",
+        "spy_player": "2",
+        "normal_word": "cappuccino",
+        "spy_word": "mocha",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_7",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"lightning\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A sudden, powerful burst of electricity that flashes across the sky during a storm.\nPlayer 2: A colorful spectrum-like arc that often appears in the sky after rain.\nPlayer 3: A colorful arc you sometimes see after a storm when sunlight breaks through raindrops.\nPlayer 4: A colorful arc that appears after a storm when sunlight breaks through.\n\nRound 2:\nPlayer 1: The fastest kind of electrical discharge, reaching the ground in an instant and often with loud thunder.\nPlayer 2: It’s the mix of multiple bright shades seen when sunlight is refracted through water droplets.\nPlayer 3: A spectrum of distinct hues that show up together in a specific curved pattern in the sky.\nPlayer 4: A spectrum-like sequence of many vivid shades visible in the sky.\n\nRound 3:\nPlayer 1: A dramatic natural phenomenon that can be seen as a bright streak and is associated with severe weather.\nPlayer 2: A festive, multitone visual symbol that people associate with clear skies following a storm.\nPlayer 3: Nature’s way of displaying multiple colors as bands, often featured in stories, art, and crafts.\nPlayer 4: A festive symbol often shown in posters and celebrations, mixing several colors in one band.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_7",
+        "spy_player": "1",
+        "normal_word": "rainbow",
+        "spy_word": "lightning",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_19",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"email\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A digital message delivered to a specific address, often used for communicating with work or friends.\nPlayer 2: A message sent electronically using an address made of two parts separated by a symbol.\nPlayer 3: It’s a single symbol you can combine with others to build written words.\nPlayer 4: A message you send digitally that often travels through servers and inboxes.\n\nRound 2:\nPlayer 1: Something you can check in an inbox, usually containing subject lines and attachments.\nPlayer 2: Something you can open in your inbox and reply to, often carrying attachments.\nPlayer 3: It’s the basic unit on alphabet charts that stands for a sound or part of a sound.\nPlayer 4: A communication method identified by addresses like name@domain.\n\nRound 3:\nPlayer 1: A common online form of correspondence that relies on an address made of a name and a domain.\nPlayer 2: A form of written communication that travels over the internet and is commonly used for work and personal contact.\nPlayer 3: It can appear on a page in printed or handwritten form, and it’s counted when spelling.\nPlayer 4: It typically includes a subject line and can hold attachments.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "3",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_19",
+        "spy_player": "3",
+        "normal_word": "email",
+        "spy_word": "letter",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_41",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"latte\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A creamy coffee drink you often order in a café, known for its foam-topped milk.\nPlayer 2: A small, intense coffee beverage made by forcing hot water through finely ground beans.\nPlayer 3: A creamy coffeehouse drink often ordered with milk, usually served hot.\nPlayer 4: A creamy coffee drink often ordered at cafes and served hot or iced in a small cup.\n\nRound 2:\nPlayer 1: The milky, espresso-based beverage typically served in a cup with a signature layered look.\nPlayer 2: The quick “shot” that forms the basis for many popular coffee drinks and has a strong aroma and crema.\nPlayer 3: A popular café beverage made by combining espresso with steamed milk and sometimes foam on top.\nPlayer 4: It’s made by combining espresso with steamed milk to create a smooth, mild flavor.\n\nRound 3:\nPlayer 1: A popular morning drink whose flavor comes from combining rich coffee with steamed milk foam.\nPlayer 2: A compact serving size associated with Italian-style cafés and a concentrated, bold flavor.\nPlayer 3: Think of a light coffee variant that feels cozy and soothing, commonly available in takeout cups.\nPlayer 4: You’ll usually see barista-style foam art on top of this popular café beverage.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "2",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_41",
+        "spy_player": "2",
+        "normal_word": "latte",
+        "spy_word": "espresso",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_31",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"sushi\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A Japanese dish served in bite-sized pieces, often with rice and toppings like fish or vegetables.\nPlayer 2: A light, crispy batter-fried dish often served with dipping sauce.\nPlayer 3: A Japanese dish made with bite-sized rice topped with seafood or vegetables and often eaten with chopsticks.\nPlayer 4: A popular Japanese dish usually eaten with chopsticks and often served in bite-sized pieces with seafood or vegetables.\n\nRound 2:\nPlayer 1: Something you might eat with chopsticks at a restaurant where it’s also commonly offered as rolls.\nPlayer 2: Japanese-style seafood or vegetables cooked by coating them and frying until crunchy.\nPlayer 3: Something you might order at a sushi restaurant, served on small pieces that can be wrapped in seaweed.\nPlayer 4: A bite-sized roll made by combining vinegared rice with fillings, frequently dipped in soy sauce.\n\nRound 3:\nPlayer 1: A seafood-focused meal frequently paired with soy sauce and wasabi for extra flavor.\nPlayer 2: A popular restaurant appetizer where thin crunchy crust meets tender filling.\nPlayer 3: A popular cuisine commonly paired with soy sauce, wasabi, and pickled ginger.\nPlayer 4: Commonly found in casual restaurants and sushi bars, it comes in varieties like nigiri and maki.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "2",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_31",
+        "spy_player": "2",
+        "normal_word": "sushi",
+        "spy_word": "tempura",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_2",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"goal\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A measurable target you aim for in order to succeed.\nPlayer 2: A thing you do that has clear instructions and a goal.\nPlayer 3: A desired outcome someone works toward in a plan or competition.\nPlayer 4: It’s what someone aims for in a pursuit, often stated at the start of a plan.\n\nRound 2:\nPlayer 1: The outcome you’re striving to achieve, often set in advance.\nPlayer 2: Work or duty assigned to someone, often with steps to complete.\nPlayer 3: The finish point you aim to reach, often written down as an objective.\nPlayer 4: It can be a target location or point you’re working toward during a game or task.\n\nRound 3:\nPlayer 1: A reason behind your effort, guiding decisions toward a specific finish.\nPlayer 2: A problem to solve or an assignment to finish before time runs out.\nPlayer 3: A target used to measure progress and motivate effort toward success.\nPlayer 4: It’s the desired result or endpoint that motivates effort and measures success.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "2",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_2",
+        "spy_player": "2",
+        "normal_word": "goal",
+        "spy_word": "task",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_18",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"cousin\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A family member you’re related to but not from your immediate household, often connected through your aunt or uncle.\nPlayer 2: A person who shares your parents with you and is basically family growing up together.\nPlayer 3: A close family member who is often described as “distant relative” despite being part of the extended family.\nPlayer 4: A family member you might call or visit who is related through your parent’s sibling.\n\nRound 2:\nPlayer 1: Someone with a similar age range as you who you might see at reunions or family gatherings.\nPlayer 2: Another child in the same household who can be older or younger and you may compete or bond with.\nPlayer 3: Someone in the family tree who shares a grandparent lineage rather than being a sibling.\nPlayer 4: Someone in your extended family who may be close in age and considered a “not quite sibling” in everyday life.\n\nRound 3:\nPlayer 1: A relative whose lineage runs through your parent’s siblings, sharing grandparents in common.\nPlayer 2: A close relative not a spouse, typically connected by birth and often called your “___” in family trees.\nPlayer 3: A person you might be childhood friends with or meet through family gatherings, connected through your parents’ relatives.\nPlayer 4: A relative who shares common grandparents with you but isn’t directly in your nuclear family.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "2",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_18",
+        "spy_player": "2",
+        "normal_word": "cousin",
+        "spy_word": "sibling",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_33",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"helicopter\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A rotor-powered aircraft with blades above that lets it lift off and hover like a flying platform.\nPlayer 2: A large aircraft that can lift off vertically using spinning rotors above it.\nPlayer 3: It’s a flying machine with spinning rotors that lets someone lift off without a runway.\nPlayer 4: A small unmanned aircraft that flies on its own or is remotely controlled to observe.\n\nRound 2:\nPlayer 1: An emergency and transport machine that can land in tight spaces and often serves in rescue missions.\nPlayer 2: A machine used for air travel in places where runways are hard to find, often carrying people or rescue teams.\nPlayer 3: Think of a vehicle often seen overhead that can hover in place and move vertically as well as forward.\nPlayer 4: A device that can hover near the ground and capture video or data from above.\n\nRound 3:\nPlayer 1: A vehicle with a cockpit and an instrument panel that controls upward flight using spinning rotors.\nPlayer 2: It can hover in place and fly forward, producing a distinctive whirring sound from its blades.\nPlayer 3: It’s a transport aircraft used for rescues, news coverage, and quick travel in hard-to-reach areas.\nPlayer 4: An automated flying unit used for surveillance, mapping, or delivery, often guided by software.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "4",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_33",
+        "spy_player": "4",
+        "normal_word": "helicopter",
+        "spy_word": "drone",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_23",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"green tea\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A soothing hot drink with a leaf base that’s often praised for calming energy and flavor.\nPlayer 2: A soothing drink with a grassy, fresh taste.\nPlayer 3: A dark-colored hot beverage that’s made by steeping dried leaves in water.\nPlayer 4: A calming beverage made by steeping leaves that are typically light-colored and refreshing.\n\nRound 2:\nPlayer 1: A pale-to-bright beverage that can be served steaming or chilled and typically has an earthy, slightly grassy taste.\nPlayer 2: An amber-colored beverage that’s often served hot and sometimes with subtle bitterness.\nPlayer 3: The caffeinated drink with a bold, slightly bitter flavor often enjoyed with milk or lemon.\nPlayer 4: It’s a warm drink often sipped for a subtle earthy taste and a gentle energy boost.\n\nRound 3:\nPlayer 1: A popular Asian-origin tea that’s commonly associated with antioxidants and a refreshing, lightly bitter finish.\nPlayer 2: A caffeinated infusion commonly enjoyed for calm energy and health benefits.\nPlayer 3: Common tea type known for its deep amber-brown appearance when brewed.\nPlayer 4: An iced or hot drink associated with health trends, often served without much sweetness.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "3",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_23",
+        "spy_player": "3",
+        "normal_word": "green tea",
+        "spy_word": "black tea",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_54",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"marshmallow\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A soft, fluffy sweet made from sugar and egg whites or similar ingredients, often used in hot drinks.\nPlayer 2: A sweet, fluffy treat often roasted or melted, typically made for s’mores.\nPlayer 3: A wobbly, sweet dessert that jiggles when you move the dish.\nPlayer 4: A fluffy sweet treat often used in hot drinks and campfire snacks.\n\nRound 2:\nPlayer 1: Something you can toast until golden-brown outside, creating a gooey center.\nPlayer 2: It’s a white, cloud-like snack that can be warmed on a stick and turns gooey.\nPlayer 3: Something made by thickening fruit flavor with gelatin so it sets into a soft form.\nPlayer 4: Soft, white, and airy confections that melt slowly over heat.\n\nRound 3:\nPlayer 1: A pale confection that’s commonly added to s’mores or used for baking and desserts.\nPlayer 2: A dessert resembling soft foam, commonly found in hot drinks and kids’ baking projects.\nPlayer 3: A spreadable condiment in bright colors that can be spooned or spread on toast.\nPlayer 4: The sugary, pillowy center found in some desserts like s’mores.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "3",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_54",
+        "spy_player": "3",
+        "normal_word": "marshmallow",
+        "spy_word": "jelly",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_47",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"lightning\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A sudden, bright streak across the sky that comes with a loud crack.\nPlayer 2: It’s a spectrum of colorful light you might see after a storm.\nPlayer 3: It’s a multicolored arc seen after storms when sunlight breaks through.\nPlayer 4: A bright arc of multiple colors that appears after rainfall.\n\nRound 2:\nPlayer 1: A fast-moving natural electrical burst that can happen during storms.\nPlayer 2: Five or more distinct bands of different hues appear in the sky, forming an arc.\nPlayer 3: You can think of it as a spectrum of hues that are often listed in order in schools.\nPlayer 4: A spectrum band seen in the sky that comes from light being bent and split.\n\nRound 3:\nPlayer 1: The kind of energy that strikes unexpectedly and leaves behind a flashing glow.\nPlayer 2: It’s a natural optical effect caused by sunlight interacting with water droplets.\nPlayer 3: It’s the colorful pattern that forms in the sky or near misty waterfalls.\nPlayer 4: A cheerful, multi-hued sign of good weather used in art and celebrations.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_47",
+        "spy_player": "1",
+        "normal_word": "rainbow",
+        "spy_word": "lightning",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "shipped_spy_3",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"poem\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: This is a form of artistic expression that often utilizes rhythm and can evoke deep emotions through carefully chosen words.\nPlayer 2: It's something that people often find on bookshelves in their homes, usually with a captivating storyline and memorable characters.\nPlayer 3: It’s a lengthy, imaginative creation often enjoyed during leisure time.\nPlayer 4: This is something that often takes you on a journey through different worlds or times.\n\nRound 2:\nPlayer 1: It can be written in various structures, such as sonnets or haikus, and often features imagery and metaphor.\nPlayer 2: This item is typically created by an individual with a vivid imagination, requiring a significant amount of time and effort to produce a polished version.\nPlayer 3: This form of storytelling typically features complex characters and a developed plot.\nPlayer 4: People spend hours engaged with this, turning pages or swiping screens to uncover the next chapter.\n\nRound 3:\nPlayer 1: Many cultures have celebrated this literary form through contests and recitals, highlighting its importance in storytelling and tradition.\nPlayer 2: Many people enjoy getting lost in one of these for hours, exploring new worlds, meeting new people, and experiencing different emotions through the power of imagination and storytelling.\nPlayer 3: It’s something you might borrow from a library or find on a bedside table, offering an escape into anothe\nPlayer 4: It can be a platform for exploring complex ideas or escaping reality, often ending with a satisfying conclusion.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "shipped_spy_3",
+        "spy_player": "1",
+        "normal_word": "novel",
+        "spy_word": "poem",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_19",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"cookie\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A sweet baked treat people dunk in milk and enjoy as a snack.\nPlayer 2: A small, dense dessert with a fudgy chocolate center that’s usually baked in a square pan.\nPlayer 3: A dense, chocolatey dessert often baked in a small pan and cut into squares.\nPlayer 4: A soft, chocolatey treat often baked in a square pan and served in small bars.\n\nRound 2:\nPlayer 1: Small round dessert often studded with chocolate chips and made at home or bought in packs.\nPlayer 2: It’s a sweet snack associated with cookie-like bars, often topped lightly or served warm with coffee.\nPlayer 3: The fudgy treat that sits between cake and cookie, with a rich, sweet flavor.\nPlayer 4: The dessert that sits between cake and cookie, with a fudgy center and a crackly top.\n\nRound 3:\nPlayer 1: A comfort food associated with baking traditions and sometimes left for someone in stories.\nPlayer 2: A dessert named for its dark color, commonly found in bake sales and lunchbox treats.\nPlayer 3: A comforting snack typically topped with nuts or swirls and served warm or at room temperature.\nPlayer 4: A sweet snack associated with bake sales and potlucks, typically topped with frosting or nuts if you’re feeling fancy.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_19",
+        "spy_player": "1",
+        "normal_word": "brownie",
+        "spy_word": "cookie",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_10",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"green tea\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A warm or chilled drink made by steeping leaves with a fresh, grassy flavor.\nPlayer 2: A soothing drink often served hot and sometimes cold, known for a fresh, grassy flavor.\nPlayer 3: A dark-colored hot drink made by steeping tea leaves in water.\nPlayer 4: A calm drink that’s typically made from steeped leaves and has a light, vegetal flavor.\n\nRound 2:\nPlayer 1: A soothing beverage often linked with mindfulness and frequently served without much sweetening.\nPlayer 2: A pale infusion made from leaves and commonly paired with relaxation or mindfulness routines.\nPlayer 3: Common morning beverage often served with milk or a slice of lemon.\nPlayer 4: Often served hot or iced, it’s a caffeine-containing beverage associated with wellness and relaxation.\n\nRound 3:\nPlayer 1: The color and taste are both understated—think light, crisp, and herbal rather than strong and dark.\nPlayer 2: A caffeine-containing beverage that can be brewed multiple times and is popular worldwide.\nPlayer 3: The variety of tea with a strong, bold flavor and deep brown-black appearance when brewed.\nPlayer 4: The color and taste profile suggest something fresh and grassy, usually enjoyed without lots of sweetness.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "3",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_10",
+        "spy_player": "3",
+        "normal_word": "green tea",
+        "spy_word": "black tea",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_47",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"rose\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A garden flower known for its layered petals and often used in romantic bouquets.\nPlayer 2: A brightly colored flower that grows from a bulb and has smooth, cup-like petals.\nPlayer 3: A fragrant flower often linked to romance and can come in many colors.\nPlayer 4: A delicate flower often associated with romance and red color, commonly found in gardens and bouquets.\n\nRound 2:\nPlayer 1: A symbol of love that also appears in songs, tattoos, and classic poetry.\nPlayer 2: Springtime garden plant known for tall stems and dramatic, goblet-shaped blooms.\nPlayer 3: A common name for a type of garden bloom that can have thorns on its stem.\nPlayer 4: A thorny stem plant that grows blooms with layered petals and strong, sweet fragrance.\n\nRound 3:\nPlayer 1: A thorny plant whose blooms can come in many colors, including a vivid pink shade.\nPlayer 2: A popular symbol in floral arrangements, often seen as a single stem or mixed bouquet.\nPlayer 3: The name is also used for a light pink/red shade and appears in songs and poems.\nPlayer 4: A common symbol of love and appreciation, and also a term used for a variety of pink shades.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "2",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_47",
+        "spy_player": "2",
+        "normal_word": "rose",
+        "spy_word": "tulip",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "shipped_normal_4",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"grapefruit\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: This fruit is known for its unique combination of sweetness and bitterness, often enjoyed in salads or as a breakfast option.\nPlayer 2: This type of fruit is often eaten for breakfast, typically halved and served with a sprinkle of sugar to balance out its tartness.\nPlayer 3: It’s a breakfast food that’s often enjoyed sectioned with a spoon.\nPlayer 4: This is a common citrus fruit often used to add a tangy flavor to dishes.\n\nRound 2:\nPlayer 1: Its vibrant, yellow-orange flesh is packed with vitamin C and is often used in juices and cocktails.\nPlayer 2: The peel of this particular citrus fruit is usually quite thick and rough to the touch, making it a bit challenging to peel by hand.\nPlayer 3: This citrus fruit has a slightly tart and tangy flavor, often a beautiful pinkish-red inside.\nPlayer 4: It's a small, round fruit that's a key ingredient in making a popular summer beverage.\n\nRound 3:\nPlayer 1: This citrus fruit is usually larger than an orange and can be found in a variety of colors, including pink and white.\nPlayer 2: When juiced, this fruit produces a refreshing and slightly bitter drink that's popular for its potential health benefits and unique flavor profile.\nPlayer 3: Think of a fruit that's a hybrid – a result of combining two different citrus va\nPlayer 4: This fruit is not only edible but also frequently used in cleaning products due to its fresh scent.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "4",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "shipped_normal_4",
+        "spy_player": "4",
+        "normal_word": "grapefruit",
+        "spy_word": "lemon",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "shipped_normal_2",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"almond\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: This is a type of nut that is often used in baking and can be found in various desserts, adding a rich flavor and crunchy texture.\nPlayer 2: This popular snack is often associated with baseball games and circus performances, where it's commonly served in a specific format.\nPlayer 3: It’s a seed often enjoyed as a snack, and can be processed into a creamy spread.\nPlayer 4: This is a common ingredient in baking that adds a crunchy texture and a rich flavor.\n\nRound 2:\nPlayer 1: You might find this ingredient in a popular milk alternative, commonly enjoyed by those who are lactose intolerant or looking for a plant-based option.\nPlayer 2: The plant that produces this food is a legume, requiring a specific type of soil and climate to grow, and is widely cultivated in many parts of the world.\nPlayer 3: This item features in many baking recipes, providing a delicate, slightly sweet flavor.\nPlayer 4: It's a tree that blooms with beautiful white flowers and is valued for its edible seeds.\n\nRound 3:\nPlayer 1: This nut is known for its heart-healthy benefits and is often recommended as a healthy snack, packed with nutrients and healthy fats.\nPlayer 2: When processed, this ingredient can be transformed into a variety of products, including a creamy paste, a sweet syrup, and even a flavorful oil used in cooking.\nPlayer 3: Often associated with health and beauty, it contains beneficial oils and is a key ingredient in m\nPlayer 4: Often found in the snack aisle, this item is a favorite for those looking for a healthy, on-the-go option.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "2",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "shipped_normal_2",
+        "spy_player": "2",
+        "normal_word": "almond",
+        "spy_word": "peanut",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_46",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"onion\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A layered bulb vegetable often used for cooking and in sandwiches, with a strong smell.\nPlayer 2: A layered bulb used to add sharp flavor to cooking, often causing tears when chopped.\nPlayer 3: A tear-inducing kitchen ingredient you can slice for salads and cooking.\nPlayer 4: A pungent bulb-based kitchen ingredient commonly used to season sauces, soups, and roasted dishes.\n\nRound 2:\nPlayer 1: It can make people tear up when sliced, and it’s usually white or yellow or red.\nPlayer 2: A common kitchen ingredient that grows underground with papery skin and can be eaten raw or cooked.\nPlayer 3: A layered bulb vegetable with a strong, pungent flavor that makes dishes sweeter when cooked.\nPlayer 4: It’s a strong-smelling clove you peel, mince, or crush to add savory depth to food.\n\nRound 3:\nPlayer 1: A common ingredient in soups and stews that you can caramelize for sweetness.\nPlayer 2: The ingredient that comes in rings when sliced and can be used for soups, salads, and garnishes.\nPlayer 3: Something you might need to handle carefully near your eyes because it releases irritating compounds.\nPlayer 4: A staple in many cuisines and home remedies, often linked with sharp taste and distinct breath after eating.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "4",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_46",
+        "spy_player": "4",
+        "normal_word": "onion",
+        "spy_word": "garlic",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_52",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"contacts\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: People’s ability to reach someone through a directory of saved entries.\nPlayer 2: Something you wear to help you see better, often with frames that sit on your nose.\nPlayer 3: A pair of transparent lenses worn over the eyes to help improve vision.\nPlayer 4: I’m an everyday wearable item that helps people see more clearly by using curved lenses.\n\nRound 2:\nPlayer 1: The plural form of things that can “get in touch” with you, like phone information.\nPlayer 2: Optical eyewear with lenses that can be tinted or corrected for eyesight issues.\nPlayer 3: Something with a frame that you adjust to comfortably sit on your face while reading or driving.\nPlayer 4: I’m often perched on the nose and secured with thin frames that come in many styles.\n\nRound 3:\nPlayer 1: Reminders or databases of who you know, often used for communications.\nPlayer 2: A pair of spectacles commonly worn by people who need vision adjustment.\nPlayer 3: An accessory that can be prescription and is often used on a bridge of the nose.\nPlayer 4: I can be used to improve vision or protect eyes from bright light, depending on the lenses.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_52",
+        "spy_player": "1",
+        "normal_word": "glasses",
+        "spy_word": "contacts",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_8",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"toilet\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A small room with plumbing where people handle bodily waste.\nPlayer 2: A daily hygiene ritual where warm water runs over your body in a private bathroom.\nPlayer 3: A small indoor room in most homes where people handle personal bodily waste.\nPlayer 4: A small room in many homes where you handle bathroom hygiene and personal sanitation.\n\nRound 2:\nPlayer 1: A fixture you flush or clean that’s found in bathrooms and public facilities.\nPlayer 2: A bathroom fixture with a handheld nozzle or overhead head that releases water in a controlled spray.\nPlayer 3: A porcelain fixture with a lid and tank that flushes to send waste away.\nPlayer 4: A fixture you use for urination and sometimes involves flushing and a bowl.\n\nRound 3:\nPlayer 1: Something you use when you need a quick bathroom stop, often with toilet paper nearby.\nPlayer 2: A quick cleansing routine that helps you feel refreshed after waking up or before going out.\nPlayer 3: A restroom necessity that’s common in public buildings and usually includes toilet paper.\nPlayer 4: You’ll find it in public buildings too, usually marked on restroom signs.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "2",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_8",
+        "spy_player": "2",
+        "normal_word": "toilet",
+        "spy_word": "shower",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_36",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"paella\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A flavorful Spanish rice dish often topped with seafood or chicken and cooked in a wide pan.\nPlayer 2: A savory rice dish from Spain that’s often cooked in a wide pan with seafood or meat.\nPlayer 3: A Spanish rice dish cooked with rich flavors and often topped with seafood.\nPlayer 4: A creamy rice dish cooked slowly with broth until the grains become tender and slightly sticky.\n\nRound 2:\nPlayer 1: It’s a communal, colorful meal known for its saffron aroma and golden crust on the bottom.\nPlayer 2: A warm, communal meal served on a metal dish, known for its saffron yellow color and mix-ins.\nPlayer 3: A shallow pan meal known for its saffron color and communal, party-style serving.\nPlayer 4: Typically associated with Italian comfort food and often served with seafood, mushrooms, or Parmesan.\n\nRound 3:\nPlayer 1: Think of a seaside feast where grains absorb rich broth and everything is simmered together in one large skillet.\nPlayer 2: A popular Spanish coastal specialty you eat with a spoon, where rice absorbs flavorful broth from the bottom.\nPlayer 3: A classic regional comfort food that’s baked or simmered until the grains absorb the broth.\nPlayer 4: Made by stirring rice continuously and finishing it with butter or cheese for a rich, velvety texture.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "4",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_36",
+        "spy_player": "4",
+        "normal_word": "paella",
+        "spy_word": "risotto",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_16",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"stamp\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A tool used to press an emblem or letters onto paper, often leaving an ink mark.\nPlayer 2: A tool or action that presses ink onto paper to leave a mark.\nPlayer 3: A small piece of mail you can send without putting it in an envelope, often with a picture on one side and a message on the other.\nPlayer 4: A flat piece of rubber or metal used to press an inked design onto paper.\n\nRound 2:\nPlayer 1: Something you can apply repeatedly to create identical impressions or evidence of approval.\nPlayer 2: Something used to confirm approval or authenticity on documents.\nPlayer 3: Something tourists buy and write while traveling, then mail back to friends or family as a keepsake.\nPlayer 4: Something you do to mark approval or payment, often seen on documents and forms.\n\nRound 3:\nPlayer 1: A device commonly used by offices or for mailing to indicate postage or authorize documents.\nPlayer 2: A repetitive action where you firmly press down to create an imprint.\nPlayer 3: A rectangular printed message card with stamps and an address where the writing typically stays visible for quick reading.\nPlayer 4: A device or action that leaves a distinct imprint, like on mail or official paperwork.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "3",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_16",
+        "spy_player": "3",
+        "normal_word": "stamp",
+        "spy_word": "postcard",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_43",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"editor\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A person or tool that refines written material by correcting and organizing it.\nPlayer 2: Someone who creates content by putting words on paper or a screen.\nPlayer 3: Someone who creates stories and puts ideas into text, often working with drafts and edits.\nPlayer 4: I’m a person who uses ink or a keyboard to put thoughts onto paper.\n\nRound 2:\nPlayer 1: The role responsible for improving a draft before it reaches readers or publishing platforms.\nPlayer 2: A craftsperson who shapes ideas into stories, articles, or scripts.\nPlayer 3: A person whose job is to craft written content like articles, novels, or scripts.\nPlayer 4: My work often involves turning ideas into stories, articles, or scripts.\n\nRound 3:\nPlayer 1: Someone who oversees content, making choices about what stays, gets changed, or is removed.\nPlayer 2: The job role responsible for composing text for books, blogs, or speeches.\nPlayer 3: An authorial role tied to producing manuscripts and using words to tell a message.\nPlayer 4: I’m the one you hire for words, edits, and drafts in hopes of publishing.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_43",
+        "spy_player": "1",
+        "normal_word": "writer",
+        "spy_word": "editor",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_34",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"backdrop\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: The large background behind a scene that helps everything stand out.\nPlayer 2: A fabric barrier hung over a window or stage to control visibility and light.\nPlayer 3: It’s a fabric panel you hang over a doorway or window for privacy and light control.\nPlayer 4: A tall fabric panel you hang in front of a window to control light and privacy.\n\nRound 2:\nPlayer 1: A support element in a design or stage setup that frames the main action or subjects.\nPlayer 2: Something you pull open or draw closed to reveal what’s behind it.\nPlayer 3: You can draw it open or closed to change what’s visible from inside a room.\nPlayer 4: Something in a room that can be pulled open or closed to reveal or hide what’s behind it.\n\nRound 3:\nPlayer 1: Something you set behind a view or display to create atmosphere and depth.\nPlayer 2: Part of theater décor that frames scenes and helps create privacy in a room.\nPlayer 3: In theaters it frames a stage and signals the start or end of a performance.\nPlayer 4: A decorative hanging used in theaters or homes, often gathered at the top with rods or tracks.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_34",
+        "spy_player": "1",
+        "normal_word": "curtain",
+        "spy_word": "backdrop",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_6",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"rainbow\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A colorful arc that appears after storms in the sky.\nPlayer 2: A bright arc of multiple colors that appears after rain in the sky.\nPlayer 3: A sudden, powerful electrical discharge in the sky that makes the ground feel like it’s reacting.\nPlayer 4: A bright multi-colored arc that appears after rainfall when sunlight breaks through clouds.\n\nRound 2:\nPlayer 1: A spectrum of multiple vivid colors lined up in a curved band.\nPlayer 2: A spectrum-like curve you might see when sunlight refracts through water droplets.\nPlayer 3: The fast flash you see before a loud rumble, often during storms.\nPlayer 4: A spectrum of distinct hues arranged in a curved pattern, often used to symbolize hope and variety.\n\nRound 3:\nPlayer 1: A cheerful sight often used to symbolize variety and hope.\nPlayer 2: A colorful symbol often used in celebrations and flags, featuring many distinct hues together.\nPlayer 3: A high-speed natural phenomenon known for its bright streaks and danger to tall objects.\nPlayer 4: A colorful visual effect created by light dispersion, splitting white light into multiple bands.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "3",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_6",
+        "spy_player": "3",
+        "normal_word": "rainbow",
+        "spy_word": "lightning",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_35",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"yogurt\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A tangy, creamy dairy product often eaten plain or with fruit on top.\nPlayer 2: A crunchy breakfast staple often poured into milk, coming in boxed varieties.\nPlayer 3: It’s a breakfast staple served in a bowl and often eaten with milk.\nPlayer 4: A breakfast bowl staple made from grains that you pour milk over.\n\nRound 2:\nPlayer 1: It’s made by fermenting milk until it becomes thick and spoonable.\nPlayer 2: Breakfast you might eat with a spoon, typically served cold and sometimes shaped like loops or flakes.\nPlayer 3: It usually comes as crunchy flakes or small pieces in a colorful box.\nPlayer 4: A crunchy, shelf-stable food often found in colorful boxes on store aisles.\n\nRound 3:\nPlayer 1: You’ll find it in many flavors at the grocery store, sometimes marketed as a healthy snack.\nPlayer 2: A sweet or whole-grain food product found in the grocery aisle for quick morning meals.\nPlayer 3: It’s a grain-based food you find in the pantry alongside other quick mornings staples.\nPlayer 4: A quick morning option commonly served with sugar or fruit bits for a sweet start.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_35",
+        "spy_player": "1",
+        "normal_word": "cereal",
+        "spy_word": "yogurt",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_38",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"mall\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A place where people buy things they want, often with many stores under one roof.\nPlayer 2: A place where people buy and sell goods, often bustling with vendors and customers.\nPlayer 3: A bustling place where people buy and sell goods and negotiate prices.\nPlayer 4: A place where people buy and sell goods, often with stalls or vendors.\n\nRound 2:\nPlayer 1: A shopping center with food courts and parking lots where you can spend the day browsing.\nPlayer 2: A hub for pricing and demand where buyers and sellers decide the value of products.\nPlayer 3: An economic scene where demand and supply drive what products are offered.\nPlayer 4: The environment for trading where buyers and sellers meet and prices are influenced.\n\nRound 3:\nPlayer 1: A commercial complex known for sale signs, brand shops, and indoor walkways.\nPlayer 2: A commercial environment—sometimes online or in a district—where transactions happen regularly.\nPlayer 3: A location or online arena for trading items, from fresh food to electronics.\nPlayer 4: The broader system of commerce for a specific category of products or services.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_38",
+        "spy_player": "1",
+        "normal_word": "market",
+        "spy_word": "mall",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_35",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"crab\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A sideways-moving sea creature with claws that can scuttle along the shore.\nPlayer 2: A small sea animal with a hard shell and sideways-looking feet that often walks along the shoreline.\nPlayer 3: A bright red sea creature with pincers and a segmented shell that lives near ocean floors.\nPlayer 4: A sea creature with many legs and a hard shell that you might find near the shoreline.\n\nRound 2:\nPlayer 1: It has a hard shell and multiple legs, often seen near tides or rocky beaches.\nPlayer 2: Something you might see in coastal seafood markets, known for pinching claws and a reddish-brown color.\nPlayer 3: It’s a popular seafood often served in restaurants, typically cooked and eaten by cracking open its tough exterior.\nPlayer 4: Something that can pinch with small claws and scuttle sideways along wet sand or rocks.\n\nRound 3:\nPlayer 1: A crustacean whose pincers can grab food, sometimes harvested for seafood dishes.\nPlayer 2: A creature in marine ecosystems that can scuttle sideways and hide under rocks when threatened.\nPlayer 3: A crustacean known for its long antennae and scuttling walk, sometimes seen in coastal regions or aquariums.\nPlayer 4: A seafood item or its imagery often connected with ocean life, beaches, and coastal cuisine.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "3",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_35",
+        "spy_player": "3",
+        "normal_word": "crab",
+        "spy_word": "lobster",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_24",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"pizza\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A hot, cheesy handheld food often ordered for a night in.\nPlayer 2: A popular cheesy, tomato-sauced dish often ordered for delivery and eaten with slices.\nPlayer 3: A staple Italian-style dish often made from wheat dough cut into various shapes and boiled.\nPlayer 4: A popular savory dish with a thin, round crust and lots of melted cheese on top.\n\nRound 2:\nPlayer 1: A round flatbread with toppings that can be sliced into large wedges.\nPlayer 2: A round baked flatbread that comes in toppings like pepperoni, mushrooms, and vegetables.\nPlayer 3: Something you can twirl with a fork and pair with tomato sauce or creamy cheese-based sauces.\nPlayer 4: Commonly ordered for delivery in slices, often topped with tomato sauce and various add-ons.\n\nRound 3:\nPlayer 1: A popular Italian-style dish that’s commonly delivered to your door.\nPlayer 2: A comfort food associated with parties and movie nights, typically shared among friends.\nPlayer 3: A pantry item found in dried boxes that becomes tender when cooked in boiling water.\nPlayer 4: A go-to comfort food for parties that can be customized with different flavors and toppings.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "3",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_24",
+        "spy_player": "3",
+        "normal_word": "pizza",
+        "spy_word": "pasta",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_41",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"nectarine\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A sweet, juicy fruit with fuzzy skin and a pit, halfway between a peach and a plum vibe.\nPlayer 2: A fuzzy-skinned fruit with juicy flesh and a sweet, floral taste.\nPlayer 3: A fuzzy-skinned fruit with a sweet, juicy interior often used in desserts and jams.\nPlayer 4: A fuzzy-skinned fruit with sweet orange flesh that tastes like summer.\n\nRound 2:\nPlayer 1: Summer fruit that’s often eaten fresh, with a bright orange flesh and a fragrant, sun-warmed smell.\nPlayer 2: Commonly comes in slices and is often found in summer drinks, jams, or desserts.\nPlayer 3: A warm, summery color and flavor that reminds you of orchards and ripe harvests.\nPlayer 4: A stone fruit that can be sliced for desserts or eaten fresh when ripe.\n\nRound 3:\nPlayer 1: A stone fruit whose taste can be tangy-sweet, commonly used in desserts like tarts and jams.\nPlayer 2: The skin color ranges from pale yellow to deep orange-pink, giving it a distinct warm hue.\nPlayer 3: A small stone fruit whose pit is hard and whose bite gives a fragrant, nectar-like taste.\nPlayer 4: A common flavor and color described as warm and bright, often used in drinks or candy.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_41",
+        "spy_player": "1",
+        "normal_word": "peach",
+        "spy_word": "nectarine",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_22",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"alien\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A visitor or creature that might come from outer space and not belong to Earth.\nPlayer 2: A machine-like assistant that follows instructions and often looks metallic or humanoid.\nPlayer 3: A machine-like being often made for doing tasks automatically.\nPlayer 4: A machine-like helper built from metal parts that can move and follow instructions.\n\nRound 2:\nPlayer 1: Something completely foreign to our world, often described as strange or unfamiliar.\nPlayer 2: A programmable worker used in factories or labs to perform tasks automatically.\nPlayer 3: Something made of metal parts that can be programmed to move and act.\nPlayer 4: Something designed to act like an intelligent assistant, often featured in sci-fi stories.\n\nRound 3:\nPlayer 1: A being associated with science fiction, space exploration, and possible contact with humans.\nPlayer 2: A fictional or futuristic character that moves under its own control like an automated servant.\nPlayer 3: A sci-fi concept of an artificial helper that resembles a person or creature.\nPlayer 4: A programmable automaton that can perform tasks repeatedly, like assembling or cleaning.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_22",
+        "spy_player": "1",
+        "normal_word": "robot",
+        "spy_word": "alien",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_40",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"silver\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A shiny metal often used for jewelry and cutlery.\nPlayer 2: A shiny metal element often used in jewelry and medals.\nPlayer 3: A lustrous metal element often used in jewelry and valued for its bright color.\nPlayer 4: A shiny metal-like element often associated with wealth, coins, and awards.\n\nRound 2:\nPlayer 1: The color associated with moonlight and bright, metallic reflections.\nPlayer 2: A prized material people mine from the earth and value for its rarity.\nPlayer 3: The color associated with winning, success, and championship trophies.\nPlayer 4: A warm, bright yellow color used to describe medals and top achievements.\n\nRound 3:\nPlayer 1: A precious element on the periodic table, commonly seen in coins.\nPlayer 2: The color associated with achievement, like winning first place.\nPlayer 3: A precious resource that can be mined from the earth and traded like a valuable commodity.\nPlayer 4: Something prized for its rarity and used in jewelry and decorative finishes.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_40",
+        "spy_player": "1",
+        "normal_word": "gold",
+        "spy_word": "silver",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_34",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"rainbow\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A bright arc-shaped display in the sky that appears after rain.\nPlayer 2: A multicolored arc that appears after storms when sunlight hits mist.\nPlayer 3: A multi-colored arc that appears in the sky after rain.\nPlayer 4: A sudden burst of electric energy in the sky, usually seen before or after a loud thunderclap.\n\nRound 2:\nPlayer 1: A spectrum of multiple colors blending smoothly from one end to the other.\nPlayer 2: Seven distinct color bands that blend together into a single visible spectrum.\nPlayer 3: A spectrum of many shades often referenced in songs and kids’ stories.\nPlayer 4: It’s a quick, dramatic discharge that can strike the ground and leave behind a crackling trail.\n\nRound 3:\nPlayer 1: A colorful visual linked with light refraction and a calm, cheerful mood.\nPlayer 2: A cheerful natural phenomenon often used as a symbol of hope and variety.\nPlayer 3: A symbol of good luck and brighter days following gloomy weather.\nPlayer 4: The name often used for extremely fast motion or speed, like something happening in an instant.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "4",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_34",
+        "spy_player": "4",
+        "normal_word": "rainbow",
+        "spy_word": "lightning",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_49",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"stairs\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A set of ascending steps you climb to reach a higher level in a building.\nPlayer 2: A rungs-stacked staircase-like tool that helps you reach higher places.\nPlayer 3: A tall rungs-on-a-frame tool used to reach high places when you can’t safely step up.\nPlayer 4: A tall rungs-on-two-sides tool used to reach higher places safely.\n\nRound 2:\nPlayer 1: You travel upward by moving your feet from one tread to the next in a fixed sequence.\nPlayer 2: Something you climb upward, usually leaning against a wall for access to ceilings.\nPlayer 3: It’s something you climb upward step by step, often found near walls during repairs or painting.\nPlayer 4: Something you climb that can be set up temporarily to access roofs or shelves.\n\nRound 3:\nPlayer 1: A stairway feature found in homes and towers that helps people navigate between floors.\nPlayer 2: A vertical set of steps used to get over or into elevated areas like roofs or lofts.\nPlayer 3: Think of a vertical set of evenly spaced steps that helps you get from ground level to an elevated spot.\nPlayer 4: A structure that guides upward step by step, often seen in construction or games with vertical movement.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_49",
+        "spy_player": "1",
+        "normal_word": "ladder",
+        "spy_word": "stairs",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_31",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"crocodile\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A long-bodied reptile with armor-like skin that lives near rivers and eats fish and animals.\nPlayer 2: A sleek predator that swims in the ocean and can have rows of sharp teeth.\nPlayer 3: A fierce ocean predator with a cartilaginous body and sharp rows of teeth.\nPlayer 4: A sleek predator of the sea with rows of sharp teeth and a reputation for circling near the surface.\n\nRound 2:\nPlayer 1: It lurks on muddy banks and has powerful jaws used for snapping at prey.\nPlayer 2: A powerful hunter known for circling near boats and leaving a fin silhouette in water.\nPlayer 3: Often spotted finning near boats, it’s associated with saltwater danger and hunting.\nPlayer 4: Commonly seen in aquariums or movies, it’s known for its fearsome fin and powerful swimming.\n\nRound 3:\nPlayer 1: A fearsome alligator-like creature often seen in wildlife documentaries, known for its quick bite.\nPlayer 2: A fearsome fish associated with ocean legends and sometimes with fear-based movies.\nPlayer 3: A legendary sea creature that can smell blood from far away and has multiple species worldwide.\nPlayer 4: A big fish that hunts using keen senses and has a streamlined body built for fast movement underwater.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_31",
+        "spy_player": "1",
+        "normal_word": "shark",
+        "spy_word": "crocodile",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_6",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"espresso\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A small, intense coffee drink with a rich, dark flavor typically served in a shot.\nPlayer 2: A creamy coffee drink often ordered at cafés, typically served in a tall cup.\nPlayer 3: A creamy coffee drink often topped with light foam in a café.\nPlayer 4: A coffee shop drink that’s creamy and usually served in a tall cup with foam on top.\n\nRound 2:\nPlayer 1: The brewing method uses tightly packed grounds and high pressure water to make a concentrated base for other drinks.\nPlayer 2: A popular beverage made by combining espresso with steamed milk and a thin layer of foam.\nPlayer 3: It’s the sweet milky version of espresso that many people order for a comforting warm cup.\nPlayer 4: A milky caffeine beverage made by combining espresso with steamed milk and often comes with latte art.\n\nRound 3:\nPlayer 1: A popular café staple often enjoyed as a quick, strong pick-me-up, sometimes with foam on top.\nPlayer 2: The cozy, milky option people choose when they want something smoother than straight espresso.\nPlayer 3: A popular beverage name that’s strongly associated with Italian-style coffee culture.\nPlayer 4: It’s the popular go-to order for people who want something smoother and sweeter than plain black coffee.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_6",
+        "spy_player": "1",
+        "normal_word": "latte",
+        "spy_word": "espresso",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_8",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"bathtub\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A large porcelain or fiberglass container you fill with water to soak and wash up.\nPlayer 2: A place or container where liquid goes and can disappear down a drain.\nPlayer 3: A basin or container where water collects and drains away.\nPlayer 4: It’s a place or feature where water collects downward and disappears from view.\n\nRound 2:\nPlayer 1: It’s the bathroom fixture where a tap runs, soap bubbles form, and you get clean while sitting or lying down.\nPlayer 2: Something you can do to a boat or object, causing it to go under water.\nPlayer 3: The act of going down below the surface, often gradually as something loses buoyancy.\nPlayer 4: You can “finish something off” by letting it go to the bottom and it won’t come back up.\n\nRound 3:\nPlayer 1: A drain in the floor of the tub area lets used water rush away when you’re done.\nPlayer 2: The opposite of floating, where an item ends up at the bottom surface level.\nPlayer 3: A place or situation where something disappears or gets overwhelmed by heavy flow or damage.\nPlayer 4: It’s also a metal household fixture with a drain that helps wash and dispose of used water.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_8",
+        "spy_player": "1",
+        "normal_word": "sink",
+        "spy_word": "bathtub",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_33",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"mitten\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A cozy hand covering you pull on for warmth during cold weather.\nPlayer 2: A protective item you wear on your hand to keep it warm or shield it from something harsh.\nPlayer 3: A wearable item you put on your hand to keep it warm or protect it during tasks.\nPlayer 4: A wearable item with separate areas for each finger that helps protect your hands.\n\nRound 2:\nPlayer 1: It has one compartment for each hand with fingers grouped together rather than separated.\nPlayer 2: Something paired with a sleeve and used when handling cold weather or delicate tasks.\nPlayer 3: It often has individual coverings for fingers and can be made of leather, fabric, or rubber.\nPlayer 4: Something you might put on before cold weather to keep your palms and knuckles warm.\n\nRound 3:\nPlayer 1: Something you might wear to keep your hands toasty when playing outside in winter.\nPlayer 2: A flexible covering with individual finger spaces that you put on before touching objects.\nPlayer 3: You might wear it when handling cold weather, driving, or protecting against burns and scratches.\nPlayer 4: Used in sports and work, it provides grip and cushioning between your hand and the surface.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_33",
+        "spy_player": "1",
+        "normal_word": "glove",
+        "spy_word": "mitten",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_13",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"theater\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A place where people gather to watch live performances on a stage.\nPlayer 2: A place where performers wear costumes and audiences watch a staged story.\nPlayer 3: A venue where crowds watch live performances on a stage with lights and actors.\nPlayer 4: A building where you go to watch movies on a large screen with rows of seats and dark lighting.\n\nRound 2:\nPlayer 1: It’s associated with plays, actors, and an audience seated in rows.\nPlayer 2: An indoor venue with rows of seats designed for live shows and dramatic performances.\nPlayer 3: The kind of place you go to for plays, shows, and rehearsals with seats facing a proscenium.\nPlayer 4: The art or industry of making and presenting films, often with premieres and reviews.\n\nRound 3:\nPlayer 1: You might go there for rehearsals, lighting cues, and curtain calls.\nPlayer 2: The venue you attend for plays and sometimes musicals, often with a stage and backstage areas.\nPlayer 3: A public arts space known for dramatic storytelling, costumes, and an audience that reacts together.\nPlayer 4: A place that sells tickets and snacks like popcorn while you enjoy a projected story.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "4",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_13",
+        "spy_player": "4",
+        "normal_word": "theater",
+        "spy_word": "cinema",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_30",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"task\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A chore or responsibility you’re expected to handle to reach a goal.\nPlayer 2: A target you aim for when trying to succeed in something.\nPlayer 3: Something you work toward to decide whether you succeeded.\nPlayer 4: A target that someone aims for in order to finish a task.\n\nRound 2:\nPlayer 1: Something you’re assigned to do, often broken into smaller steps.\nPlayer 2: The thing at the end of a plan that measures whether you’ve done well.\nPlayer 3: The target in a plan or mission that guides your actions.\nPlayer 4: The intended result of an effort, often written down as a measure of success.\n\nRound 3:\nPlayer 1: A piece of work that gets completed as part of a larger project or assignment.\nPlayer 2: A desired outcome that guides your efforts and decisions.\nPlayer 3: A desired outcome that motivates progress and effort.\nPlayer 4: A final destination in a challenge that motivates planning and persistence.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_30",
+        "spy_player": "1",
+        "normal_word": "goal",
+        "spy_word": "task",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_18",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"dill\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A small green herb often used to season pickles and other tangy foods.\nPlayer 2: A fragrant culinary herb often used fresh or dried to flavor Italian dishes.\nPlayer 3: A fragrant leafy herb often used in Italian cooking and found in summer gardens or on windowsills.\nPlayer 4: A common green culinary herb used to season pasta, pizza, and salads.\n\nRound 2:\nPlayer 1: It’s a feathery-leaf plant that can be chopped fresh or dried as a seasoning.\nPlayer 2: It’s a green-leaf plant you might grow on a windowsill because it thrives in warm, sunny conditions.\nPlayer 3: The aromatic green garnish in pesto and Caprese dishes, prized for its sweet, peppery smell.\nPlayer 4: Leaves with a sweet, slightly peppery scent often grown in warm weather gardens or pots.\n\nRound 3:\nPlayer 1: A fragrant garnish that pairs especially well with fish, potatoes, and creamy sauces.\nPlayer 2: Its taste is peppery-sweet and it commonly shows up with tomatoes in sauces and salads.\nPlayer 3: A common culinary plant with small tender leaves that can be grown in pots and used fresh or dried.\nPlayer 4: A fragrant ingredient found in pesto, usually sold fresh or dried with a strong aromatic flavor.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_18",
+        "spy_player": "1",
+        "normal_word": "basil",
+        "spy_word": "dill",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_9",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"piano\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A classic instrument you play by pressing keys, producing crisp tones.\nPlayer 2: A classic keyboard instrument that produces sound when keys are pressed.\nPlayer 3: A handheld instrument with strings that you usually play by strumming or plucking with your fingers.\nPlayer 4: A musical instrument with black-and-white keys you press to produce notes.\n\nRound 2:\nPlayer 1: It’s commonly found in music lessons and concerts, with multiple octaves laid out in rows.\nPlayer 2: Often seen on stage or in music lessons, it has black and white keys.\nPlayer 3: It has a long neck with frets and is commonly used in bands for melody and rhythm.\nPlayer 4: Often found in living rooms or concert halls, played by striking keys with your fingers.\n\nRound 3:\nPlayer 1: You can play it softly or loudly depending on how hard you press the keys.\nPlayer 2: A versatile instrument used for both accompaniment and solo melodies, usually played seated.\nPlayer 3: You can make different tones by changing how tightly the strings are pressed and which strings you play.\nPlayer 4: A keyboard-based instrument capable of both gentle melodies and powerful chords.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "3",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_9",
+        "spy_player": "3",
+        "normal_word": "piano",
+        "spy_word": "guitar",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "shipped_spy_1",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"pasta\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: This is a versatile staple food that can be served in a variety of shapes and sizes, often enjoyed with a rich sauce or in a salad.\nPlayer 2: It's a popular food item that originated in Italy and is often served hot, typically topped with a variety of ingredients such as cheese, vegetables, and meats.\nPlayer 3: It’s often enjoyed with friends and family, and frequently delivered to your door.\nPlayer 4: This is a popular food item often served at parties and gatherings, known for its round shape.\n\nRound 2:\nPlayer 1: It’s commonly associated with Italian cuisine and can be paired with ingredients like cheese, vegetables, or meats to create a delightful dish.\nPlayer 2: This favorite comfort food is usually circular in shape, crispy on the bottom, and chewy on the inside, making it a satisfying meal or snack for people of all ages.\nPlayer 3: This circular food is easily customizable with a variety of toppings.\nPlayer 4: It's a dish that can be customized with various toppings and is a favorite for quick, casual meals.\n\nRound 3:\nPlayer 1: This food item is made from a simple mixture of flour and water, usually cooked in boiling water until it reaches a tender texture.\nPlayer 2: The preparation of this beloved dish often involves a specific type of oven or cooking technique, and its aroma is known to tantalize the senses and stimulate appetite.\nPlayer 3: A popular choice for a quick and satisfying meal, it's often cut into triangular\nPlayer 4: This food is often associated with Friday night dinners and can be found in countless varieties across different cultures.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "shipped_spy_1",
+        "spy_player": "1",
+        "normal_word": "pizza",
+        "spy_word": "pasta",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_11",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"beef\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A common protein from a cow that’s used for grilling and hearty meals.\nPlayer 2: A type of meat commonly used for bacon, ham, and barbecue.\nPlayer 3: A red protein from cattle used for steaks, burgers, and stews.\nPlayer 4: A common type of red meat from cattle, often used in burgers or stews.\n\nRound 2:\nPlayer 1: The term for muscle meat that can be stewed, ground, or sliced for cooking.\nPlayer 2: The edible flesh from a pig, often salty or seasoned in dishes.\nPlayer 3: A term often used in sports or conflict to mean a rivalry or grudge.\nPlayer 4: The protein at the center of many grilling and steak dishes, typically cooked to different doneness levels.\n\nRound 3:\nPlayer 1: A thick, savory ingredient often found in burgers and roasts, sometimes associated with spicy dish names.\nPlayer 2: A cooking staple that can be sliced, roasted, or turned into sausages.\nPlayer 3: One specific kind of animal flesh that comes in various cuts like brisket and sirloin.\nPlayer 4: A term that can also mean a serious disagreement or grudge, like a “situation” between people.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "2",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_11",
+        "spy_player": "2",
+        "normal_word": "beef",
+        "spy_word": "pork",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_49",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"porridge\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A warm, thick breakfast made by simmering grains until they turn creamy.\nPlayer 2: Small cooked grains often served warm with a creamy or buttery texture, especially at breakfast.\nPlayer 3: A warm, thick breakfast mash made by simmering grain with milk or water until it becomes spoonable comfort food.\nPlayer 4: A warm, thick breakfast bowl made by slowly cooking grains with milk or water until it turns creamy.\n\nRound 2:\nPlayer 1: Comforting hot cereal often topped with fruit, honey, or milk for sweetness.\nPlayer 2: A simple southern comfort dish that can be topped with cheese, gravy, or eggs.\nPlayer 3: The kind of dish you eat with a spoon and toppings like fruit, honey, or nuts, often for a hearty morning meal.\nPlayer 4: Comfort-food in a spoonable form that you can top with fruit, honey, or cinnamon for sweetness.\n\nRound 3:\nPlayer 1: The sticky, spoonable meal you get from cooking oats (or similar grains) low and slow.\nPlayer 2: Coarse corn-based porridge-like food that thickens as it simmers.\nPlayer 3: A smooth, creamy or chunky cooked cereal mixture that thickens as it warms and is commonly found in hearty bowl breakfasts.\nPlayer 4: A hearty gruel-like dish often eaten in the morning, especially during cold weather.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "2",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_49",
+        "spy_player": "2",
+        "normal_word": "porridge",
+        "spy_word": "grits",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_22",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"marshmallow\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A sweet, fluffy treat often used in hot drinks and campfire snacks.\nPlayer 2: A sweet, fluffy treat often used to make s’mores by roasting over a fire.\nPlayer 3: It’s a sweet, wobbly spread you might spoon onto toast.\nPlayer 4: A sweet, fluffy confection often toasted or melted on a campfire treat.\n\nRound 2:\nPlayer 1: It’s a soft, white confection with a springy texture that melts or toasts under heat.\nPlayer 2: A soft, white confection that melts into a gooey layer when heated.\nPlayer 3: Think of a fruit-based treat that quivers like a gelatin dessert.\nPlayer 4: Something white and pillowy that puffs up and gets gooey when heated.\n\nRound 3:\nPlayer 1: A sugary cloud-like bite commonly found in s’mores and dessert toppings.\nPlayer 2: Like a cloud of sugar, it expands and turns golden outside with a firm yet squishy bite.\nPlayer 3: It’s a translucent snack or candy with a bouncy, gelatin-like texture.\nPlayer 4: A dessert-like snack used to make s’mores with chocolate and graham crackers.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "3",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_22",
+        "spy_player": "3",
+        "normal_word": "marshmallow",
+        "spy_word": "jelly",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "normal_55",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"omelet\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A fluffy dish made by whisking eggs and cooking them in a pan, often folded with fillings.\nPlayer 2: A fluffy, folded breakfast dish made by cooking beaten eggs with fillings.\nPlayer 3: I do something to a familiar set of letters so the order changes unpredictably.\nPlayer 4: A fluffy dish made by cooking beaten eggs until set, often filled or folded with extras.\n\nRound 2:\nPlayer 1: A breakfast item that’s popular with cheese, vegetables, or meats and can be topped with herbs or sauce.\nPlayer 2: Something you can order at a diner that’s similar to scrambled eggs but often served folded.\nPlayer 3: I’m what happens when you mix up the sequence in a word or list until it no longer matches the original.\nPlayer 4: Something you might order for breakfast or brunch, served warm and usually cut into a soft, folded portion.\n\nRound 3:\nPlayer 1: The kind of meal you can customize quickly, where eggs set into a soft, savory shape.\nPlayer 2: A quick pan-cooked egg creation where cheese, vegetables, or meat are tucked inside.\nPlayer 3: I can turn a correct arrangement into a jumbled mess while keeping the same pieces.\nPlayer 4: A quick pan-cooked egg meal where the texture can be tender and slightly moist inside.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "3",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "normal_55",
+        "spy_player": "3",
+        "normal_word": "omelet",
+        "spy_word": "scramble",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_15",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"cafe\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A cozy place where people order drinks and pastries.\nPlayer 2: A place where people sit down to eat, often with a host, servers, and a menu.\nPlayer 3: A place where you sit down and order food from a menu.\nPlayer 4: A public place where you order food from a menu and eat at tables.\n\nRound 2:\nPlayer 1: A room-temperature beverage made from roasted beans.\nPlayer 2: Somewhere you go for meals prepared by chefs, with a dining room atmosphere and bills at the end.\nPlayer 3: Somewhere with servers, tables, and a kitchen that prepares meals on demand.\nPlayer 4: Somewhere with a chef in the back, waitstaff, and a dining area for regular customers.\n\nRound 3:\nPlayer 1: A casual European-style spot often found on street corners with small tables.\nPlayer 2: A business built around serving food and drinks to customers, ranging from fast-casual to fine dining.\nPlayer 3: An establishment you visit to dine in, often with reservations and a check at the end.\nPlayer 4: A location you might visit for a special meal, reservations, and paying the bill afterward.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_15",
+        "spy_player": "1",
+        "normal_word": "restaurant",
+        "spy_word": "cafe",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_11",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"espresso\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A small, strong coffee drink made by forcing hot water through finely ground beans under pressure.\nPlayer 2: A popular café drink made by combining espresso with steamed milk, often served in a tall cup.\nPlayer 3: A creamy coffee drink often ordered as a café staple with a smooth, frothy top.\nPlayer 4: A popular caffeinated drink made by combining espresso with steamed milk for a creamy texture.\n\nRound 2:\nPlayer 1: Thick, dark, concentrated java with a layer of frothy crema on top, often served in short cups.\nPlayer 2: Smooth and creamy coffee with a light, frothy top and a mild flavor compared to straight espresso.\nPlayer 3: A popular beverage made from espresso combined with warm milk, typically served hot and customizable.\nPlayer 4: Typically served in a café in a tall cup, often with foam on top and sometimes flavored syrups.\n\nRound 3:\nPlayer 1: The base for drinks like lattes and cappuccinos, known for its intense flavor and quick, bold caffeine hit.\nPlayer 2: A common menu item in coffee shops, typically customized with flavors and milk variations.\nPlayer 3: Something you might find in a coffee shop menu between “cappuccino” and “espresso,” known for its milk-to-coffee balance.\nPlayer 4: A common “coffee order” for people who prefer something smoother and milder than straight espresso.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_11",
+        "spy_player": "1",
+        "normal_word": "latte",
+        "spy_word": "espresso",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "shipped_normal_1",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"snake\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: This creature is a long, legless reptile often found slithering through grass or hiding under rocks.\nPlayer 2: This creature is often feared for its venomous fangs and slithering movements, striking fear into the hearts of many who cross its path.\nPlayer 3: It’s a cold-blooded creature often seen basking in the sun to regulate its body temperature.\nPlayer 4: This creature is known for its sleek, legless body that can slither through grass without making a sound.\n\nRound 2:\nPlayer 1: Known for its ability to shed its skin, this animal symbolizes transformation and renewal in many cultures.\nPlayer 2: In many ecosystems, this long and slender creature plays a crucial role in maintaining the balance of nature, serving as both predator and prey.\nPlayer 3: This animal is known for its ability to detach its tail as a defense mechanism.\nPlayer 4: In many cultures, this being is often associated with cunning and deceit, sometimes even leading to its portrayal as a villain.\n\nRound 3:\nPlayer 1: Some species of this creature can be venomous, using their bite to immobilize prey or defend themselves.\nPlayer 2: Throughout history and across various cultures, this animal has been a symbol of renewal, transformation, and healing, appearing in numerous myths, legends, and artworks.\nPlayer 3: Many types of this reptile change color to camouflage themselves within their envi\nPlayer 4: It can be found in a variety of habitats, from deserts to rainforests, and it plays a crucial role in controlling pest populations.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "3",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "shipped_normal_1",
+        "spy_player": "3",
+        "normal_word": "snake",
+        "spy_word": "lizard",
+        "num_rounds": 3
+      }
+    },
+    {
+      "instance_id": "spy_5",
+      "input": "You are a skilled player in a word description game. Your task is to identify which player is the 'spy' based on their descriptions.\n\nGame Rules:\n1. There are 4 players in the game.\n2. 3 players received the same word (normal players).\n3. 1 player received a different but related word (the spy).\n4. Each player describes their word without saying it directly.\n5. You need to determine who is the spy based on these descriptions.\n\nYou are Player 1, and your word is: \"milkshake\".\n\nAnalyze the descriptions carefully. Look for subtle differences that might reveal who has a different word.\n\nRound 1:\nPlayer 1: A sweet, creamy drink often served cold with a thick, blended texture.\nPlayer 2: I’m a clear liquid people drink to stay alive and cool off on hot days.\nPlayer 3: A clear liquid you find in rivers and lakes that’s essential for life.\nPlayer 4: A clear liquid you drink and often find in lakes, rivers, and bottles.\n\nRound 2:\nPlayer 1: Something you might get at a diner made by mixing ice cream with a flavored ingredient.\nPlayer 2: I can fall from the sky as rain or snow and reshape the ground over time.\nPlayer 3: Something you drink or use for bathing, often found in a glass or on tap.\nPlayer 4: It falls from clouds as a refreshing weather element and can soak the ground.\n\nRound 3:\nPlayer 1: A dessert beverage that comes in classic flavors like chocolate or vanilla and you drink through a straw.\nPlayer 2: I’m found in rivers and oceans, can freeze into ice, and helps power some machines.\nPlayer 3: A substance that can freeze into ice or boil into steam.\nPlayer 4: It can exist as ice or steam and is essential for most life on Earth.\n\nBased on these descriptions, which player is the spy (Player 1, 2, 3, or 4)?\nExplain your reasoning step by step, then provide your final answer in the format: 'Final Spy: Player X'",
+      "ground_truth": "1",
+      "metadata": {
+        "benchmark": "socialmaze",
+        "task": "fts",
+        "scenario_id": "spy_5",
+        "spy_player": "1",
+        "normal_word": "water",
+        "spy_word": "milkshake",
+        "num_rounds": 3
+      }
+    }
+  ],
+  "metadata": {
+    "benchmark": "socialmaze",
+    "task": "fts",
+    "split_label": "train",
+    "n": 60,
+    "seed": 42,
+    "pool_total": 120,
+    "source": "xzx34/SocialMaze",
+    "num_rounds": 3,
+    "gen_model": "openai/gpt-5.4-nano"
+  }
+}

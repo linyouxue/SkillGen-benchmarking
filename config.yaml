@@ -1,0 +1,79 @@
+# Model configuration (all LLM calls go via OpenRouter unless noted)
+models:
+  default: "openai/gpt-5.4-mini"
+
+  baseline_agent: "openai/gpt-5.4-nano"
+  baseline_judge: "openai/gpt-5.4-mini"
+
+  induction: "openai/gpt-5.4-mini"
+  induction_contextual: "openai/gpt-5.4-mini"
+  induction_summary: "openai/gpt-5.4-mini"
+  induction_pattern: "openai/gpt-5.4-mini"
+  induction_contrastive: "openai/gpt-5.4-mini"
+
+  generation_plan: "openai/gpt-5.4-mini"
+  generation_execute: "openai/gpt-5.4-mini"
+
+  refinement: "openai/gpt-5.4-mini"
+
+  # verification_agent must match baseline_agent so that skill gains are not
+  # confounded with a capability gap between the two models.
+  verification_agent: "openai/gpt-5.4-nano"
+  verification_judge: "openai/gpt-5.4-mini"
+  verification_case_analyst: "openai/gpt-5.4-mini"
+  verification_revision_synthesiser: "openai/gpt-5.4-mini"
+
+llm:
+  temperature: 0.0
+  max_tokens: 4096
+  max_tokens_generation: 16384
+
+embedding:
+  model: "text-embedding-3-small"
+
+clustering:
+  method: "kmeans"        # kmeans | dbscan | agglomerative
+  n_clusters: null        # null = auto-select
+  max_failure_clusters: 8
+  max_success_clusters: 8
+  min_clusters: 2
+  target_cluster_size: 15
+  min_cluster_size: 1
+
+induction:
+  max_contrastive_pairs: 20
+
+generation:
+  use_web_search: false
+  max_search_queries: 0
+  candidate_output_dir: "./candidates"
+  generate_scripts: false
+  max_failure_clusters_in_prompt: 6
+  max_success_clusters_in_prompt: 6
+  max_contrastive_pairs_in_prompt: 8
+
+verification_analysis:
+  case_analyst_workers: 8
+  case_analyst_max_tokens: 2048
+  revision_synthesiser_max_tokens: 4096
+
+verification:
+  sample_size: 120
+  min_sample: 20
+  seed: 42
+  min_net_gain_abs: 3
+  min_net_gain_rel: 0.05
+
+router:
+  enabled: false
+  model: "openai/gpt-5.4-mini"
+  max_workers: 16
+
+pipeline:
+  max_refine_rounds: 8
+  baseline_runs_per_instance: 1
+  max_workers: 16
+  artifact_root: "./artifacts/runs"
+
+skill_output:
+  path: "./skill_output"

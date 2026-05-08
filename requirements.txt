@@ -1,0 +1,12 @@
+openai>=1.0
+numpy
+scikit-learn
+statsmodels
+pyyaml
+tiktoken
+datasets
+tqdm
+litellm
+openpyxl
+huggingface_hub
+matplotlib

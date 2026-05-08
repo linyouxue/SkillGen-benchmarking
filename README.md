@@ -1,6 +1,6 @@
 # SkillGen
 
-Code for the SkillGen skill-discovery pipeline. 
+Code for the paper: **SkillGen**: Verified Inference-Time Agent Skill Synthesis
 
 ## Requirements
 
@@ -118,4 +118,19 @@ skillgen_paper/
     scienceworld/      - ScienceWorld science tasks  
     socialmaze/        - SocialMaze social reasoning  
     toolbench/         - ToolBench API-use planning  
+```
+
+
+## 📖 Citation
+
+If you find this repository useful, please cite our paper:
+
+```
+@article{ma2026skillgen,
+  title={{SkillGen}: Verified Inference-Time Agent Skill Synthesis},
+  author={Ma, Yuchen and Huang, Yue and Bao, Han and Zhuang, Haomin and Shukla, Swadheen and Galley, Michel and Zhang, Xiangliang and Feuerriegel, Stefan},
+  journal={arXiv preprint},
+  year={2026}
+}
+
 ```

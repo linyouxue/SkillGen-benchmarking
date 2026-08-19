@@ -1,0 +1,36 @@
+{
+  "schema_version": "skillsbench-skillgen-v1",
+  "task_id": "court-form-filling",
+  "task_dir": "/home/linyuanjing/skillsbench-v1.1/tasks/court-form-filling",
+  "task_digest": "sha256:f6d806dc886eedca6acec21714d0860a53a5b6048ffabf32da75b679054defb8",
+  "source_version": "v1.1",
+  "source_commit": "b63b7b2850226b6aa4fb5929a8c1ac7bc4d9a6af",
+  "source_task_dirty": false,
+  "construction_rollouts": 5,
+  "sealed_test_rollouts": 3,
+  "construction_instance_ids": [
+    "court-form-filling::construction::r000",
+    "court-form-filling::construction::r001",
+    "court-form-filling::construction::r002",
+    "court-form-filling::construction::r003",
+    "court-form-filling::construction::r004"
+  ],
+  "sealed_test_instance_ids": [
+    "court-form-filling::sealed-test::r000",
+    "court-form-filling::sealed-test::r001",
+    "court-form-filling::sealed-test::r002"
+  ],
+  "agent": "openhands",
+  "sandbox": "docker",
+  "bench_executable": "/home/linyuanjing/.local/bin/bench",
+  "jobs_root": "/home/linyuanjing/skillsbench-paid-pilot/jobs/court-form-filling",
+  "method_fidelity": {
+    "released_skillgen_core_unchanged": true,
+    "task_processed_independently": true,
+    "cross_task_pooling": false,
+    "adaptive_sampling_until_both_classes": false,
+    "refinement_positive_example_extension": false,
+    "official_curated_skill_is_construction_input": false
+  },
+  "interpretation": "Rollout slots are stochastic replicas of one fixed task package, not independent task instances or evidence of cross-task generalization."
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "protocol": "skillgen_skillsbench_task_disjoint_family_fold_v1",
+  "family_id": "family-13-economic-financial-quant",
+  "family_number": 13,
+  "family_label": "Economic / Financial Quantitative Analysis",
+  "coherence": "A",
+  "selection_seed": "42",
+  "selection_hash_rule": "sha256(seed|family_number|task_id), minimum wins",
+  "selection_hashes": {
+    "econ-detrending-correlation": "62cb6a9783504fde0804722984ae07f4422f64dc641dd00459c6a29d74d96032",
+    "shock-analysis-demand": "2f3ad4adbc6a0dd2d287585174d2fcc76aaee94e813b9e9288ae7d7a12295bcb",
+    "shock-analysis-supply": "e74a79d1f78770aa546c00ddab757f9e116f899d678d602700f385706a5c70d6",
+    "weighted-gdp-calc": "ec457f876ed9291cd9690aeec576c432812e8750b6517c14447da13ac9a1c40b",
+    "reserves-at-risk-calc": "087315f287f130466dc0221064e19ad27b1398d0bc1469f359488067bf5eef46"
+  },
+  "heldout_task_id": "reserves-at-risk-calc",
+  "source_task_ids": [
+    "econ-detrending-correlation",
+    "shock-analysis-demand",
+    "shock-analysis-supply",
+    "weighted-gdp-calc"
+  ],
+  "induction_allocations": {
+    "econ-detrending-correlation": 3,
+    "shock-analysis-demand": 3,
+    "shock-analysis-supply": 2,
+    "weighted-gdp-calc": 2
+  },
+  "verification_allocations": {
+    "econ-detrending-correlation": 2,
+    "shock-analysis-demand": 2,
+    "shock-analysis-supply": 3,
+    "weighted-gdp-calc": 3
+  },
+  "heldout_rollouts": 10,
+  "task_package_digests": {
+    "econ-detrending-correlation": "sha256:6bc78b9362f4926a6aa496563e647aae3ef5835e874a9e2189e5d4b970837f3f",
+    "shock-analysis-demand": "sha256:eb27ce4d934456018a4b0b4f6f56edd9eab7ff2803cd3b7ca1aad3dc49a4e5f2",
+    "shock-analysis-supply": "sha256:e1e802c40b7205d858f3220da98136dd8fe5244fc244acaef40b9dc7a326c4bf",
+    "weighted-gdp-calc": "sha256:3bbd15f668803f6429078ce0110bf97bf856b97e3a81df0fc8654259f26149a1",
+    "reserves-at-risk-calc": "sha256:cd5bbddbe939151ace7d9ad71843fa3ab0c34ed92230d64c679800f6586f792a"
+  },
+  "source_version": "v1.1",
+  "source_commit": "b63b7b2850226b6aa4fb5929a8c1ac7bc4d9a6af",
+  "source_dirty": false,
+  "agent": "openhands",
+  "sandbox": "docker",
+  "bench_executable": "/home/linyuanjing/.local/bin/bench",
+  "jobs_root": "/home/linyuanjing/skillgen-jobs/deepseek-family13-heldout-pilot",
+  "counts": {
+    "induction": 10,
+    "verification": 10,
+    "heldout": 10
+  },
+  "candidate_rounds": 8,
+  "gate": {
+    "selection": "maximum verification net_gain; earliest round breaks ties",
+    "repair_minus_regression_min": 2,
+    "heldout_skill_is_conditional_on_gate": true
+  },
+  "isolation": {
+    "heldout_absent_from_induction": true,
+    "heldout_absent_from_verification": true,
+    "official_skills_hidden": true,
+    "adaptive_sampling": false
+  },
+  "api_calls_made": false
+}

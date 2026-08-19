@@ -51,6 +51,7 @@ def collect_baseline_cache(
     *,
     config: AgentConfig | None = None,
     progress_desc: str | None = None,
+    max_workers: int = 16,
 ) -> dict[str, Trajectory]:
     """Run baseline agent once and return a cache keyed by instance_id."""
     trajs = collect_trajectories(
@@ -58,6 +59,7 @@ def collect_baseline_cache(
         task_type,
         config=config,
         progress_desc=progress_desc,
+        max_workers=max_workers,
     )
     return {t.instance_id: t for t in trajs}
 
@@ -79,6 +81,7 @@ def verify_effectiveness(
     progress_label: str | None = None,
     router_model: str | None = None,
     router_max_workers: int = 16,
+    effectiveness_max_workers: int = 16,
     min_net_gain_abs: int = 1,
     min_net_gain_rel: float = 0.0,
 ) -> tuple[EffectivenessResult, dict[str, Trajectory]]:
@@ -111,6 +114,7 @@ def verify_effectiveness(
             task_type,
             config=baseline_config,
             progress_desc=f"{progress_label or artifact_prefix} baseline",
+            max_workers=effectiveness_max_workers,
         )
     else:
         missing = [i for i in all_instances if i.instance_id not in baseline_cache]
@@ -120,6 +124,7 @@ def verify_effectiveness(
                 task_type,
                 config=baseline_config,
                 progress_desc=f"{progress_label or artifact_prefix} baseline",
+                max_workers=effectiveness_max_workers,
             )
             for t in extra:
                 baseline_cache[t.instance_id] = t
@@ -172,6 +177,7 @@ def verify_effectiveness(
             skill=skill,
             config=skill_config,
             progress_desc=f"{progress_label or artifact_prefix} with skill",
+            max_workers=effectiveness_max_workers,
         )
         skill_map = {t.instance_id: t for t in skill_trajs}
 

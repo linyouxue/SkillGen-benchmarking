@@ -1,0 +1,4 @@
+# Install alongside requirements.txt for the pinned SkillsBench adapter.
+benchflow==0.6.7
+# Offline adapter/orchestrator regression tests.
+pytest>=8,<9

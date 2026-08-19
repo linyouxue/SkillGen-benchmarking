@@ -138,6 +138,9 @@ def _skill_from_raw(raw: dict) -> SkillItem:
     raw.setdefault("scripts", [])
     raw.setdefault("reference_docs", [])   # progressive-disclosure docs (new field)
     raw.setdefault("contextual_abstract", raw.get("semantic_aim", "") or "")
+    # ``json.dump(default=str)`` persists the enum as its value.  Rehydrate it
+    # here so resumed runs have the same in-memory type as fresh runs.
+    raw["status"] = SkillStatus(raw.get("status", SkillStatus.ACTIVE.value))
     raw.setdefault("behavioral_aim", "")
     raw.setdefault("semantic_aim", raw.get("contextual_abstract", ""))
     raw.pop("source_cluster_ids", None)  # field no longer exists

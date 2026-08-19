@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 import logging
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from pathlib import Path
 
 from artifacts import write_json
@@ -25,6 +25,7 @@ from prompts import (
     REVISION_SYNTHESIS_SYSTEM,
 )
 import llm
+import pilot_budget_guard
 
 log = logging.getLogger("skillgen.verification")
 
@@ -89,6 +90,8 @@ def _analyse_one_case(
             max_tokens=max_tokens,
         )
     except Exception as exc:
+        if isinstance(exc, pilot_budget_guard.PilotBudgetStop):
+            raise
         log.warning(
             "case analyst failed for instance=%s bucket=%s: %s",
             case.get("instance_id"), bucket, exc,
@@ -159,6 +162,8 @@ def _synthesise_revision_guidance(
             max_tokens=max_tokens,
         )
     except Exception as exc:
+        if isinstance(exc, pilot_budget_guard.PilotBudgetStop):
+            raise
         log.warning("revision synthesiser failed: %s", exc)
         return json.dumps(
             {
@@ -202,6 +207,7 @@ def run_verification(
     progress_label: str | None = None,
     router_model: str | None = None,
     router_max_workers: int = 16,
+    effectiveness_max_workers: int = 16,
     min_net_gain_abs: int = 1,
     min_net_gain_rel: float = 0.0,
 ) -> tuple[VerificationFeedback, dict[str, Trajectory]]:
@@ -223,6 +229,7 @@ def run_verification(
         progress_label=progress_label,
         router_model=router_model,
         router_max_workers=router_max_workers,
+        effectiveness_max_workers=effectiveness_max_workers,
         min_net_gain_abs=min_net_gain_abs,
         min_net_gain_rel=min_net_gain_rel,
     )
@@ -258,30 +265,53 @@ def run_verification(
         round_idx, len(cases), case_analyst_model, case_analyst_max_workers,
     )
     analyses: list[CaseAnalysis] = [None] * len(cases)  # type: ignore[list-item]
-    with ThreadPoolExecutor(max_workers=max(1, int(case_analyst_max_workers))) as ex:
-        futs = {
-            ex.submit(
-                _analyse_one_case,
-                case,
-                skill_body=candidate.body,
-                model=case_analyst_model,
-                max_tokens=case_analyst_max_tokens,
-            ): idx
-            for idx, case in enumerate(cases)
-        }
-        for fut in as_completed(futs):
-            idx = futs[fut]
-            try:
-                analyses[idx] = fut.result()
-            except Exception as exc:
-                log.warning("case analyst task failed (idx=%d): %s", idx, exc)
-                analyses[idx] = CaseAnalysis(
-                    instance_id=str(cases[idx].get("instance_id") or ""),
-                    bucket=_case_outcome_to_bucket(cases[idx].get("outcome") or ""),
-                    analysis=f"(task error: {exc})",
-                    skill_influence="unclear",
-                    micro_recommendation="(analyst unavailable)",
+    worker_count = max(1, int(case_analyst_max_workers))
+    first_budget_stop: pilot_budget_guard.PilotBudgetStop | None = None
+    with ThreadPoolExecutor(max_workers=worker_count) as ex:
+        pending = {}
+        next_idx = 0
+
+        def submit_one(idx: int) -> None:
+            pending[
+                ex.submit(
+                    _analyse_one_case,
+                    cases[idx],
+                    skill_body=candidate.body,
+                    model=case_analyst_model,
+                    max_tokens=case_analyst_max_tokens,
                 )
+            ] = idx
+
+        while next_idx < len(cases) and len(pending) < worker_count:
+            submit_one(next_idx)
+            next_idx += 1
+
+        while pending:
+            done, _ = wait(tuple(pending), return_when=FIRST_COMPLETED)
+            for fut in sorted(done, key=lambda item: pending[item]):
+                idx = pending.pop(fut)
+                try:
+                    analyses[idx] = fut.result()
+                except Exception as exc:
+                    if isinstance(exc, pilot_budget_guard.PilotBudgetStop):
+                        if first_budget_stop is None:
+                            first_budget_stop = exc
+                        continue
+                    log.warning("case analyst task failed (idx=%d): %s", idx, exc)
+                    analyses[idx] = CaseAnalysis(
+                        instance_id=str(cases[idx].get("instance_id") or ""),
+                        bucket=_case_outcome_to_bucket(cases[idx].get("outcome") or ""),
+                        analysis=f"(task error: {exc})",
+                        skill_influence="unclear",
+                        micro_recommendation="(analyst unavailable)",
+                    )
+            if first_budget_stop is None:
+                while next_idx < len(cases) and len(pending) < worker_count:
+                    submit_one(next_idx)
+                    next_idx += 1
+
+    if first_budget_stop is not None:
+        raise first_budget_stop
     feedback.case_analyses = [a for a in analyses if a is not None]
 
     # 2. Revision guidance synthesis (single call)

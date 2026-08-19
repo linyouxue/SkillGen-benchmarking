@@ -86,6 +86,20 @@ def write_trajectories(path: str | Path, trajectories: list[Trajectory]) -> Path
     return output_path
 
 
+def read_trajectories(path: str | Path) -> list[Trajectory]:
+    """Read a JSONL trajectory artifact written by :func:`write_trajectories`."""
+
+    input_path = Path(path)
+    trajectories: list[Trajectory] = []
+    with input_path.open(encoding="utf-8") as handle:
+        for line in handle:
+            line = line.strip()
+            if not line:
+                continue
+            trajectories.append(_trajectory_from_dict(json.loads(line)))
+    return trajectories
+
+
 # Checkpoint helpers
 
 _TRAJECTORIES_FILE = "checkpoint_trajectories.jsonl"

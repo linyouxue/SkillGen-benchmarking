@@ -30,6 +30,13 @@ python eval_skill.py \
 
 Results are written to `./skill_output/<timestamp>/skill.json`.
 
+## SkillsBench benchmarking
+
+The per-task adapter and the faithful benchmarking protocol requested for
+SkillsBench are documented in [SKILLSBENCH_BENCHMARK.md](SKILLSBENCH_BENCHMARK.md).
+This path runs the released SkillGen method; it does not add iterative
+positive-example retrieval or repair extensions.
+
 ## Dataset Format
 
 ```json

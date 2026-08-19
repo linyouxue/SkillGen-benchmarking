@@ -216,3 +216,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# SkillGen x SkillsBench runtime artifacts and external pinned checkout
+artifacts/skillsbench/
+skill_output/skillsbench/
+external/skillsbench-v1.1/

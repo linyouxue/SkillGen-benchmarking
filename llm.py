@@ -7,10 +7,12 @@ import logging
 import os
 import threading
 import time
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, as_completed, wait
 from contextlib import contextmanager
 from pathlib import Path
 from openai import OpenAI
+
+import pilot_budget_guard
 
 logger = logging.getLogger(__name__)
 
@@ -98,6 +100,7 @@ except ImportError:  # pragma: no cover - optional dependency fallback
     tqdm = None
 
 _router_client: OpenAI | None = None
+_router_client_key: tuple[str, str] | None = None
 _openai_client: OpenAI | None = None
 _ROUTER_MAX_RETRIES = 6
 _ROUTER_RETRY_BASE_DELAY = 2.0
@@ -110,14 +113,38 @@ _ROUTER_REQUEST_TIMEOUT = float(os.environ.get("OPENROUTER_HTTP_TIMEOUT", "180")
 
 
 def _get_router_client() -> OpenAI:
-    """OpenRouter client for LLM chat completions."""
-    global _router_client
-    if _router_client is None:
+    """Configured OpenAI-compatible client for LLM chat completions.
+
+    OpenRouter remains the default for upstream compatibility.  The
+    SkillsBench DeepSeek pilot explicitly sets
+    ``SKILLGEN_CHAT_PROVIDER=deepseek`` so every SkillGen meta call goes to
+    DeepSeek's official endpoint and account.
+    """
+    global _router_client, _router_client_key
+    provider = os.environ.get("SKILLGEN_CHAT_PROVIDER", "openrouter").strip().lower()
+    if provider == "deepseek":
+        base_url = os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com")
+        api_key = os.environ.get("DEEPSEEK_API_KEY", "")
+        if not api_key:
+            raise RuntimeError("DEEPSEEK_API_KEY is required for the DeepSeek route")
+    elif provider == "openrouter":
+        base_url = "https://openrouter.ai/api/v1"
+        api_key = os.environ.get("OPENROUTER_API_KEY", "")
+        if not api_key:
+            raise RuntimeError("OPENROUTER_API_KEY is required for the OpenRouter route")
+    else:
+        raise ValueError(
+            "SKILLGEN_CHAT_PROVIDER must be 'openrouter' or 'deepseek', "
+            f"got {provider!r}"
+        )
+    client_key = (provider, base_url)
+    if _router_client is None or _router_client_key != client_key:
         _router_client = OpenAI(
-            base_url="https://openrouter.ai/api/v1",
-            api_key=os.environ["OPENROUTER_API_KEY"],
+            base_url=base_url,
+            api_key=api_key,
             timeout=_ROUTER_REQUEST_TIMEOUT,
         )
+        _router_client_key = client_key
     return _router_client
 
 
@@ -135,9 +162,29 @@ def _router_chat_create(**kwargs):
     """Chat completion with exponential-backoff retries for transient errors."""
     last_exc = None
     for attempt in range(1, _ROUTER_MAX_RETRIES + 1):
+        using_deepseek = (
+            os.environ.get("SKILLGEN_CHAT_PROVIDER", "openrouter").strip().lower()
+            == "deepseek"
+        )
+        reservation_token = None
+        if using_deepseek:
+            reservation_token = pilot_budget_guard.before_meta_request()
         try:
-            return _get_router_client().chat.completions.create(**kwargs)
+            response = _get_router_client().chat.completions.create(**kwargs)
+            if using_deepseek:
+                pilot_budget_guard.record_balance(
+                    "after_meta_request",
+                    reservation_token=reservation_token,
+                )
+            return response
         except Exception as exc:
+            if isinstance(exc, pilot_budget_guard.PilotBudgetStop):
+                raise
+            if using_deepseek:
+                pilot_budget_guard.record_balance(
+                    "after_meta_request_error",
+                    reservation_token=reservation_token,
+                )
             last_exc = exc
             msg = str(exc)
             cls_name = exc.__class__.__name__
@@ -362,6 +409,58 @@ def run_concurrent(
     """Run fn(*args) concurrently. Returns results in order."""
     if not args_list:
         return []
+
+    # The paid DeepSeek pilot uses persistent per-request reservations. Keep a
+    # bounded rolling window so the first observed exception stops submission
+    # while already-running work is allowed to finish and settle cleanly.
+    if pilot_budget_guard.enabled():
+        worker_count = max(1, int(max_workers))
+        results = [None] * len(args_list)
+        progress = None
+        if progress_desc and tqdm is not None:
+            progress = tqdm(
+                total=len(args_list),
+                desc=progress_desc,
+                leave=False,
+                dynamic_ncols=True,
+            )
+        first_error: BaseException | None = None
+        with ThreadPoolExecutor(max_workers=worker_count) as pool:
+            pending = {}
+            next_idx = 0
+
+            def submit_one(idx: int) -> None:
+                ctx = contextvars.copy_context()
+                pending[pool.submit(ctx.run, fn, *args_list[idx])] = idx
+
+            while next_idx < len(args_list) and len(pending) < worker_count:
+                submit_one(next_idx)
+                next_idx += 1
+            try:
+                while pending:
+                    done, _ = wait(tuple(pending), return_when=FIRST_COMPLETED)
+                    for future in sorted(done, key=lambda item: pending[item]):
+                        idx = pending.pop(future)
+                        try:
+                            results[idx] = future.result()
+                        except BaseException as exc:
+                            if first_error is None:
+                                first_error = exc
+                        if progress is not None:
+                            progress.update(1)
+                    if first_error is None:
+                        while (
+                            next_idx < len(args_list)
+                            and len(pending) < worker_count
+                        ):
+                            submit_one(next_idx)
+                            next_idx += 1
+            finally:
+                if progress is not None:
+                    progress.close()
+        if first_error is not None:
+            raise first_error
+        return results
 
     results = [None] * len(args_list)
     with ThreadPoolExecutor(max_workers=max_workers) as pool:

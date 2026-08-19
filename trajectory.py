@@ -2,13 +2,16 @@
 
 from __future__ import annotations
 import ast
+import contextvars
 import json
 import logging
 import time
 import traceback
 import uuid
+from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from dataclasses import dataclass, field
-from typing import Any
+from types import TracebackType
+from typing import Any, Callable
 
 from models import TaskInstance, Trajectory, TaskType, SkillItem
 from prompts import (
@@ -89,7 +92,10 @@ def evaluate_trajectory(
     bench = instance.metadata.get("benchmark")
     model_output = str(traj.final_output or "")
 
-    if bench == "tau_bench":
+    if bench in {"tau_bench", "skillsbench"}:
+        # These custom runners return trajectories already scored by their
+        # official benchmark verifiers. Do not replace that score with an LLM
+        # judge.
         return traj
 
     if bench == "livecodebench":
@@ -580,6 +586,10 @@ def run_agent(instance: TaskInstance, skill_bundle: SkillItem | None = None,
     if instance.metadata.get("benchmark") == "tau_bench":
         return _run_tau_bench_agent(instance, skill_bundle, config)
 
+    if instance.metadata.get("benchmark") == "skillsbench":
+        from benchmarks.skillsbench_adapter import run_skillsbench_agent
+        return run_skillsbench_agent(instance, skill_bundle, config)
+
     skill_section = ""
     if skill_bundle:
         skill_section = SKILL_SECTION_TEMPLATE.format(skill_body=skill_bundle.body)
@@ -800,6 +810,11 @@ def _run_and_eval(instance: TaskInstance, task_type: TaskType,
         return evaluate_trajectory(traj, instance, task_type,
                                    rubric=rubric, model=config.judge_model)
     except Exception as exc:
+        if instance.metadata.get("benchmark") == "skillsbench":
+            # A BenchFlow/container/verifier error is not evidence that the
+            # agent failed the task. Stop instead of poisoning SkillGen's
+            # negative-example pool with an infrastructure failure.
+            raise
         err_text = f"[agent_exception] {type(exc).__name__}: {exc}\n{traceback.format_exc(limit=6)}"
         traj = Trajectory(
             trajectory_id=f"err_{instance.instance_id}_{uuid.uuid4().hex[:8]}",
@@ -828,6 +843,7 @@ def collect_trajectories(
     runs_per_instance: int = 1,
     max_workers: int = 16,
     progress_desc: str | None = None,
+    on_trajectory: Callable[[Trajectory], None] | None = None,
 ) -> list[Trajectory]:
     """Run agent on all instances concurrently and evaluate each trajectory."""
     if config is None:
@@ -837,6 +853,73 @@ def collect_trajectories(
         for inst in instances
         for _ in range(runs_per_instance)
     ]
+    # SkillsBench infrastructure/verifier failures are not negative examples.
+    # Keep only ``max_workers`` paid slots in flight, submit replacements one at
+    # a time, and stop submitting as soon as any running slot fails.  Already
+    # running slots are drained so their official scores can still be cached
+    # and checkpointed.  Results are returned in the frozen input order even
+    # though the callback observes completion order.
+    if args_list and all(
+        args[0].metadata.get("benchmark") == "skillsbench" for args in args_list
+    ):
+        worker_count = max(1, int(max_workers))
+        if worker_count == 1:
+            trajectories: list[Trajectory] = []
+            for args in args_list:
+                trajectory = _run_and_eval(*args)
+                trajectories.append(trajectory)
+                if on_trajectory is not None:
+                    on_trajectory(trajectory)
+            return trajectories
+
+        ordered: list[Trajectory | None] = [None] * len(args_list)
+        first_error: tuple[BaseException, TracebackType | None] | None = None
+        next_index = 0
+
+        with ThreadPoolExecutor(max_workers=worker_count) as pool:
+            futures: dict[object, int] = {}
+
+            def submit_one(index: int) -> None:
+                # Each worker needs its own Context so stage-level token and
+                # budget accounting are not lost across thread boundaries.
+                context = contextvars.copy_context()
+                future = pool.submit(context.run, _run_and_eval, *args_list[index])
+                futures[future] = index
+
+            while next_index < len(args_list) and len(futures) < worker_count:
+                submit_one(next_index)
+                next_index += 1
+
+            while futures:
+                done, _ = wait(tuple(futures), return_when=FIRST_COMPLETED)
+                # Stable processing makes simultaneous completions auditable.
+                for future in sorted(done, key=lambda item: futures[item]):
+                    index = futures.pop(future)
+                    try:
+                        trajectory = future.result()
+                        ordered[index] = trajectory
+                        if on_trajectory is not None:
+                            on_trajectory(trajectory)
+                    except BaseException as exc:  # re-raised after in-flight drain
+                        if first_error is None:
+                            first_error = (exc, exc.__traceback__)
+
+                if first_error is None:
+                    while (
+                        next_index < len(args_list)
+                        and len(futures) < worker_count
+                    ):
+                        submit_one(next_index)
+                        next_index += 1
+
+        if first_error is not None:
+            error, traceback_object = first_error
+            raise error.with_traceback(traceback_object)
+        if any(item is None for item in ordered):
+            raise RuntimeError(
+                "SkillsBench bounded collector returned without completing all slots"
+            )
+        return [item for item in ordered if item is not None]
     return llm.run_concurrent(
         _run_and_eval,
         args_list,
